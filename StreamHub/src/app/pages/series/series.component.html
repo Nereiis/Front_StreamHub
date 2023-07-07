@@ -1,1 +1,9 @@
-<p>series works!</p>
+<div>
+    <ul>
+        <li *ngFor="let serie of seriesList">
+            <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
+            <h3>{{serie.Nombre}}</h3>
+            <p>{{serie.Valoracion}}</p>
+        </li>
+    </ul>
+</div>
