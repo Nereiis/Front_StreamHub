@@ -14,6 +14,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     LibrosComponent,
     PerfilComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DetailSerieComponent
   ],
   imports: [
     BrowserModule,

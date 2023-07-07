@@ -1,6 +1,6 @@
 <div>
     <ul>
-        <li *ngFor="let serie of seriesList">
+        <li *ngFor="let serie of seriesList" routerLink="/series/{{serie._id}}">
             <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
             <h3>{{serie.Nombre}}</h3>
             <p>{{serie.Valoracion}}</p>

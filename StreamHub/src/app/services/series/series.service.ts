@@ -14,4 +14,8 @@ export class SeriesService {
   getSeries() {
     return this.http.get(this.db_url);
   }
+
+  getSerieById(id:string) {
+    return this.http.get(`${this.db_url}/${id}`);
+  }
 }

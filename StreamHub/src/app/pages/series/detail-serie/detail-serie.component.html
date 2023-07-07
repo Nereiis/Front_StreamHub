@@ -1,0 +1,20 @@
+<div *ngIf="serie">
+    <h2>{{serie.Nombre}}</h2>
+    <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
+    <ul>
+        <li *ngFor="let genr of serie.Genero">
+            <p>{{genr}}</p>
+        </li>
+    </ul>
+    <h4>{{serie.Valoracion}}</h4>
+    <p>{{serie.Descripcion}}</p>
+    <ul>
+        <li *ngFor="let capitulo of serie.Capitulos">
+            <img src="{{capitulo.Icono}}" alt="{{capitulo.Nombre}}" />
+            <p>{{capitulo.Nombre}}</p>
+            <p>{{capitulo.Duracion}}</p>
+            <p>{{capitulo.Temporada}}</p>
+            <p>{{capitulo.Descripcion}}</p>
+        </li>
+    </ul>
+</div>
