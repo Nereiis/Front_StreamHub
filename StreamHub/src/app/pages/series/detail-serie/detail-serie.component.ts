@@ -22,4 +22,11 @@ export class DetailSerieComponent {
       this.serie = data;
     });
   }
+
+  deleteSerie() {
+    this.service.deleteSerie(this.id).subscribe((data:any) => {
+      //alert("producto eliminado");
+      this.router.navigate(['/series']);
+    })
+  }
 }

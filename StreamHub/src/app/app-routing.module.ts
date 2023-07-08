@@ -5,6 +5,7 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
 import { SeriesComponent } from './pages/series/series.component';
 import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.component';
+import { FormComponent } from './pages/series/form/form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'peliculas', component: PeliculasComponent },
 
   { path: 'series', component: SeriesComponent },
+  { path: 'gestionSeries', component: FormComponent },
   { path: 'series/:id', component: DetailSerieComponent }
 ];
 

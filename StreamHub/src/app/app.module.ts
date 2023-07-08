@@ -15,6 +15,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.component';
+import { FormComponent } from './pages/series/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,15 @@ import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.c
     PerfilComponent,
     LoginComponent,
     RegisterComponent,
-    DetailSerieComponent
+    DetailSerieComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
