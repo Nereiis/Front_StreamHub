@@ -29,4 +29,9 @@ export class DetailSerieComponent {
       this.router.navigate(['/series']);
     })
   }
+
+  editSerie(serie:SeriesI) {
+    this.service.editSerie(serie);
+    this.router.navigate(['/gestionSeries']);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SeriesI } from 'src/app/models/interfaces';
 import { SeriesService } from 'src/app/services/series/series.service';
@@ -28,7 +28,7 @@ export class FormComponent {
 
   constructor(private service: SeriesService, private form: FormBuilder, private router: Router) {
     this.serie = this.service.getOneSerie();
-    this._id = String(this.service.getId());
+    this._id = this.service.getId();
   }
 
   ngOnInit() : void {
@@ -46,6 +46,17 @@ export class FormComponent {
     this.serieForm.valueChanges.subscribe((data) => {
       this.serie = data;
     })
+
+    // for (const genre of this.genres) {
+    //   console.log(genre.value);
+    //   const checkbox = document.getElementById(genre.value) as HTMLInputElement | null;
+    //   console.log(checkbox);
+    //   if (checkbox != null) {
+    //     checkbox.checked = this.serie.Genero.includes(checkbox.value);
+    //   }
+    // }
+    console.log("serie:" + this.serie.Nombre);
+    console.log("serie:" + this.serie.Genero);
   }
 
   onCheckboxChange(event: any) {
@@ -57,7 +68,7 @@ export class FormComponent {
         this.serie.Genero.splice(index, 1);
       }
     }
-    
+    console.log(this.serie.Genero);
   }
 
   onClick() {
@@ -65,14 +76,14 @@ export class FormComponent {
     if(this.serieForm.valid) {
       if(this._id === "") {
         // ADD SERIE
-        this.service.postSerie(this.serie).subscribe((data) => {
-          this.serieForm.reset();
-          this.submitted = false;
-          this.router.navigate(['/series']);
-        });
+        this.service.postSerie(this.serie).subscribe();
       } else {
         // EDIT SERIE
+        this.service.putSerie(this._id,this.serie).subscribe(); 
       }
+      this.serieForm.reset();
+      this.submitted = false;
+      this.router.navigate(['/series']);
     }
   }
 

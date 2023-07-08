@@ -7,7 +7,7 @@ import { SeriesI } from '../../models/interfaces';
 })
 export class SeriesService {
 
-  id: String = "";
+  id: string = "";
   serieData: SeriesI = {
     _id: '',
     Portada: '',
@@ -40,12 +40,21 @@ export class SeriesService {
     return this.http.delete(`${this.db_url}/${id}`);
   }
 
+  putSerie(id:string, serie:SeriesI) {
+    return this.http.put(`${this.db_url}/${id}`, serie);
+  }
+
   getOneSerie() {
     return this.serieData;
   }
 
   getId(){
     return this.id;
+  }
+
+  editSerie(serie:SeriesI) {
+    this.serieData = serie;
+    this.id = serie._id;
   }
 
   resetSerieData() {
