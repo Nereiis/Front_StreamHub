@@ -129,7 +129,7 @@ img{
     width: 100%;
     
 }
-button{
+.botonAñadir{
     margin: 30px 7%;
     border: none;
     background-color: rgb(49, 49, 49);
@@ -141,6 +141,7 @@ button{
 }
 
 .contenedorBoton{
+
     display: flex;
     justify-content: center;
     align-items: center;
