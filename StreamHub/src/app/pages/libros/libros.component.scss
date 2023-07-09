@@ -111,7 +111,7 @@ img{
     width: 90%;
 }
 
-button{
+.button{
     width: 30px;
     height: 30px;
     border: none;
@@ -127,5 +127,22 @@ button{
 .contenedorFooter{
     height: 140px;
     width: 100%;
+    
+}
+button{
+    margin: 30px 7%;
+    border: none;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.contenedorBoton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }

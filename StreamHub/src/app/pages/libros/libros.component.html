@@ -18,7 +18,7 @@
       <option value="Novela negra">Novela negra</option>
       <option value="Novela histórica">Novela histórica</option>
     </select>
-  </div>
+</div>
 <section>
     <ul>
         <li *ngFor="let libro of filtroList" >
@@ -28,8 +28,8 @@
             </div>
             <div class="contenedorFooter">
                 <div class="contenedorBotones">
-                    <button>|></button>
-                    <button  routerLink="/libros/{{libro._id}}">+</button>
+                    <button class="button">|></button>
+                    <button class="button" routerLink="/libros/{{libro._id}}">+</button>
                 </div>
                 <p>{{libro.Nombre}}</p>
                 
@@ -37,5 +37,8 @@
         </li>
         
     </ul>
-    <button routerLink="/gestionLibros">Añadir Libro</button>
+    
 </section>
+<div class="contenedorBoton">
+<button routerLink="/gestionLibros">Añadir Libro</button>
+</div>
