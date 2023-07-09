@@ -42,11 +42,12 @@ export class LibrosComponent {
       this.filtroList = [...this.librosList];
     } else{
     this.categoriaList=this.librosList.filter((item) =>
-    item.Genero[0] == categoria
+    item.Genero.includes(categoria)
     )
     
     this.filtroList=this.librosList.filter((item) => 
-       item.Genero[0] == categoria
+    item.Genero.includes(categoria)
+
     )
   }
   }

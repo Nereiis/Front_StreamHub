@@ -1,4 +1,4 @@
-
+// para el filtro
   .divinput {
     display: flex;
     justify-content: center;
@@ -22,3 +22,110 @@
     border-radius: 4px;
   }
   
+//pintar los datos
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    display:flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 2%;
+    
+    
+    
+}
+
+ul:hover > :not(:hover){
+    opacity:0.4;
+}
+
+li{
+    width: 17%;
+    height: 440px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #C4DFDF;
+    
+    
+}
+li:hover{
+    border: 5px solid rgb(49, 49, 49);
+}
+li:hover > .contenedorFooter > .contenedorBotones{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    
+
+}
+
+li:hover > .contenedorFooter > P{
+    font-size: 12px;
+    height: 50px
+
+}
+p{
+    height: 100px;
+    width: 90%;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px 5%;
+    
+}
+
+// img:hover{
+//     // scale: 120%;
+    
+    
+    
+// }
+
+img{
+    width: 100%;
+    height: 100%;
+    // transition: scale 400ms;
+    
+    
+    
+}
+
+.contenedorImagen{
+    // overflow: hidden;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorBotones{
+    display: none;
+    margin: 15px 5%;
+    align-items: end;
+    width: 90%;
+}
+
+button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    font-weight: bold;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+}
+
+.contenedorFooter{
+    height: 140px;
+    width: 100%;
+    
+}

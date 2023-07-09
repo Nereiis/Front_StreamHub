@@ -19,13 +19,23 @@
       <option value="Novela histórica">Novela histórica</option>
     </select>
   </div>
-<div>
+<section>
     <ul>
-        <li *ngFor="let libro of filtroList" routerLink="/libros/{{libro._id}}">
-            <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
-            <h3>{{libro.Nombre}}</h3>
-            <p>{{libro.Valoracion}}</p>
+        <li *ngFor="let libro of filtroList" >
+            <div  class="contenedorImagen">
+                <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" routerLink="/libros/{{libro._id}}"/>
+                
+            </div>
+            <div class="contenedorFooter">
+                <div class="contenedorBotones">
+                    <button>|></button>
+                    <button  routerLink="/libros/{{libro._id}}">+</button>
+                </div>
+                <p>{{libro.Nombre}}</p>
+                
+            </div>
         </li>
+        
     </ul>
     <button routerLink="/gestionLibros">Añadir Libro</button>
-</div>
+</section>
