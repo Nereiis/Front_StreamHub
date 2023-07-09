@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'libros', component: LibrosComponent },
   { path: 'peliculas', component: PeliculasComponent },
-  { path: 'gestionpeliculas', component: FormPeliculaComponent },
+  { path: 'gestionPeliculas', component: FormPeliculaComponent },
   { path: 'peliculas/:id', component: DetailPeliculaComponent },
   { path: 'series', component: SeriesComponent },
 

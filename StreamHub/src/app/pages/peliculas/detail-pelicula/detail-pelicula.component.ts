@@ -26,7 +26,7 @@ export class DetailPeliculaComponent {
   deletePelicula() {
     this.service.deletePelicula(this.id).subscribe((data:any) => {
       //alert("producto eliminado");
-      this.router.navigate(['/Peliculas']);
+      this.router.navigate(['/peliculas']);
     })
   }
 
