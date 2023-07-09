@@ -6,5 +6,5 @@
             <p>{{serie.Valoracion}}</p>
         </li>
     </ul>
-    <button routerLink="/gestionSeries">Añadir Serie</button>
+    <button *ngIf="authService.getRole() == 'admin'" routerLink="/gestionSeries">Añadir Serie</button>
 </div>

@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { SeriesI } from 'src/app/models/interfaces';
@@ -12,7 +13,7 @@ export class DetailSerieComponent {
   serie!: SeriesI;
   id!: string;
   
-  constructor(private service: SeriesService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private service: SeriesService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {

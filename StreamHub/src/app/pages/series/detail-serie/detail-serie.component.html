@@ -18,6 +18,6 @@
         </li>
     </ul>
 
-    <button (click)="deleteSerie()">Eliminar Serie</button>
-    <button (click)="editSerie(serie)">Editar Serie</button>
+    <button *ngIf="authService.getRole() == 'admin'" (click)="deleteSerie()">Eliminar Serie</button>
+    <button *ngIf="authService.getRole() == 'admin'" (click)="editSerie(serie)">Editar Serie</button>
 </div>

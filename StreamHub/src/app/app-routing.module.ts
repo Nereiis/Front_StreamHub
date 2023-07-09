@@ -8,17 +8,18 @@ import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.c
 import { FormComponent } from './pages/series/form/form.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'libros', component: LibrosComponent },
-  { path: 'peliculas', component: PeliculasComponent },
+  { path: 'libros', component: LibrosComponent, canActivate:[authGuard]},
+  { path: 'peliculas', component: PeliculasComponent, canActivate:[authGuard] },
 
-  { path: 'series', component: SeriesComponent },
-  { path: 'gestionSeries', component: FormComponent },
-  { path: 'series/:id', component: DetailSerieComponent }
+  { path: 'series', component: SeriesComponent, canActivate:[authGuard] },
+  { path: 'gestionSeries', component: FormComponent, canActivate:[authGuard] },
+  { path: 'series/:id', component: DetailSerieComponent, canActivate:[authGuard] }
 ];
 
 @NgModule({

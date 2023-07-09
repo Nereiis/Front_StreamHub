@@ -31,6 +31,6 @@ export class AuthService {
 
   getRole(){
     let user = JSON.parse(String(sessionStorage.getItem('user')));
-    return user?.role;
+    return user?.Role;
   }
 }
