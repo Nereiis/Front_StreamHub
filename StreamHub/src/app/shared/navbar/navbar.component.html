@@ -18,6 +18,11 @@
           <a class="nav-link" routerLink="/libros">Libros</a>
         </li>
       </ul>
+      <ul>
+        <li><a routerLink="/register" *ngIf="!token"> Registrar</a></li>
+        <li><a routerLink="/login" *ngIf="!token"> Iniciar sesión</a></li>
+        <li><button (click)="logOut()" *ngIf="token">Cerrar sesión</button></li>
+      </ul>
 			<a routerLink="/">
       	<img src="https://cdn-icons-png.flaticon.com/512/7439/7439967.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
 			</a>

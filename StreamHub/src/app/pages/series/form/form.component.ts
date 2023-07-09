@@ -46,15 +46,7 @@ export class FormComponent {
     this.serieForm.valueChanges.subscribe((data) => {
       this.serie = data;
     })
-
-    // for (const genre of this.genres) {
-    //   console.log(genre.value);
-    //   const checkbox = document.getElementById(genre.value) as HTMLInputElement | null;
-    //   console.log(checkbox);
-    //   if (checkbox != null) {
-    //     checkbox.checked = this.serie.Genero.includes(checkbox.value);
-    //   }
-    // }
+    
     console.log("serie:" + this.serie.Nombre);
     console.log("serie:" + this.serie.Genero);
   }

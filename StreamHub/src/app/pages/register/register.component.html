@@ -1,1 +1,25 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" class="register" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="username"> Nombre de usuario </label>
+        <input formControlName="Username" type="text" id="username">
+        <p *ngIf="(submitted && registerForm?.get('Username')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="email"> Email </label>
+        <input formControlName="Email" type="text" id="email">
+        <p *ngIf="(submitted && registerForm?.get('Email')?.hasError('required'))">Este campo es requerido</p>
+        <p *ngIf="(submitted && registerForm?.get('Email')?.hasError('pattern'))">No cumple el formato de email</p>
+    </div>
+    <div>
+        <label for="password"> Contraseña </label>
+        <input formControlName="Password" type="password" id="password">
+        <p *ngIf="(submitted && registerForm?.get('Password')?.hasError('required'))">Este campo es requerido</p>
+        <p *ngIf="(submitted && registerForm?.get('Password')?.hasError('pattern'))">No cumple el formato de password (1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial)</p>
+    </div>
+    <div>
+        <button type="submit"> Registrar </button>
+    </div>
+    <div *ngIf="error">
+        <p>{{error}}</p>
+    </div>
+</form>
