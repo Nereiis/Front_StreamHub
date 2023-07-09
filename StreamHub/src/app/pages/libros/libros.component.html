@@ -1,6 +1,27 @@
+<div class="divinput">
+    <input
+      name="value"
+      [(ngModel)]="valueF"
+      id="value"
+      type="text"
+      (input)="filtrarDatos(filtro.value)"
+      #filtro
+    />
+    <select (change)="filtrarCategorias(categorias.value)" #categorias>
+      <option value="">Todas</option>
+      <option value="Manga">Manga</option>
+      <option value="Narrativa de humor">Narrativa de humor</option>
+      <option value="Infantil">Infantil</option>
+      <option value="Novela de Terror">Novela de Terror</option>
+      <option value="Novela romántica">Novela romántica</option>
+      <option value="Narrativa fantástica">Narrativa fantástica</option>
+      <option value="Novela negra">Novela negra</option>
+      <option value="Novela histórica">Novela histórica</option>
+    </select>
+  </div>
 <div>
     <ul>
-        <li *ngFor="let libro of librosList" routerLink="/libros/{{libro._id}}">
+        <li *ngFor="let libro of filtroList" routerLink="/libros/{{libro._id}}">
             <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
             <h3>{{libro.Nombre}}</h3>
             <p>{{libro.Valoracion}}</p>

@@ -44,6 +44,8 @@ export class EditLibroComponent implements OnInit{
         this.router.navigate(["/libros"]);
       })
     };
+
+    
   }
 
 
