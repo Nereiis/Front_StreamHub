@@ -1,1 +1,10 @@
-<p>libros works!</p>
+<div>
+    <ul>
+        <li *ngFor="let libro of librosList" routerLink="/libros/{{libro._id}}">
+            <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
+            <h3>{{libro.Nombre}}</h3>
+            <p>{{libro.Valoracion}}</p>
+        </li>
+    </ul>
+    <button routerLink="/gestionLibros">Añadir Libro</button>
+</div>

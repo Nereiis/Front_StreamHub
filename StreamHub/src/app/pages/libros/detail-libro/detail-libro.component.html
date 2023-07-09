@@ -1,0 +1,16 @@
+<div *ngIf="libro">
+    <h2>{{libro.Nombre}}</h2>
+    <h4>{{libro.Autor}}</h4>
+    <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
+    <ul>
+        <li *ngFor="let genr of libro.Genero">
+            <p>{{genr}}</p>
+        </li>
+    </ul>
+    <h4>{{libro.Valoracion}}</h4>
+    <p>{{libro.Descripcion}}</p>
+    
+
+    <button (click)="deleteLibro()">Eliminar Libro</button>
+    <button (click)="editLibro(libro)">Editar Libro</button>
+</div>

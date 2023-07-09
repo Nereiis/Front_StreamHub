@@ -1,0 +1,46 @@
+<section>
+    <form [formGroup]="libroForm" (ngSubmit)="editLibro()">
+        <div class="divinput">
+            <label for="Portada">Portada</label>
+            <input id="Portada"  formControlName="Portada" type="text"/>
+            <p *ngIf= "(submitted && libroForm?.get('Portada')?.hasError('required'))">Este campo es requerido</p>
+        </div>
+        <div class="divinput">
+            <label for="Nombre">Nombre</label>
+            <input id="Nombre" formControlName="Nombre" type="text"/>
+            <p *ngIf= "(submitted && libroForm?.get('Nombre')?.hasError('required'))">Este campo es requerido</p>
+        </div>
+        <div class="divinput">
+            <label for="Autor">Autor</label>
+            <input id="Autor"  formControlName="Autor" type="text"/>
+            <p *ngIf= "(submitted && libroForm?.get('Autor')?.hasError('required'))">Este campo es requerido</p>
+        </div>
+        <div class="divinput">
+            <label for="Genero">Género</label>
+            <input id="Genero"  formControlName="Genero" type="text"/>
+            <p *ngIf= "(submitted && libroForm?.get('Genero')?.hasError('required'))">Este campo es requerido</p>
+        </div>
+        <div class="divinput">
+            <label for="Descripcion">Descripción</label>
+            <input id="Descripcion"  formControlName="Descripcion" type="text"/>
+            <p *ngIf= "(submitted && libroForm?.get('Descripcion')?.hasError('required'))">Este campo es requerido</p>
+        </div>
+        
+        <button>Editar libro</button>
+    </form>
+    
+    <div class="product" *ngIf="libro">
+        <article>
+            <div class="contenedorimg">
+                <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
+            </div>
+            <div class="contenedortexto">
+                <h3>Nombre: {{libro.Nombre}}</h3>
+                <p class="price">Autor: {{libro.Autor}}</p>
+                <p class="price">Género: {{libro.Genero}}</p>
+                <p class="description">Descripción: {{libro.Descripcion}}</p>
+                
+            </div>
+        </article>
+    </div>
+    </section>
