@@ -14,6 +14,7 @@ import { FormComponent } from './pages/series/form/form.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { authGuard } from './guards/auth.guard';
+import { TarifasComponent } from './pages/tarifas/tarifas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'peliculas/:id', component: DetailPeliculaComponent, canActivate:[authGuard] },
   { path: 'series', component: SeriesComponent, canActivate:[authGuard] },
   { path: 'gestionSeries', component: FormComponent, canActivate:[authGuard] },
-  { path: 'series/:id', component: DetailSerieComponent, canActivate:[authGuard] }
+  { path: 'series/:id', component: DetailSerieComponent, canActivate:[authGuard] },
+  { path: 'tarifas', component: TarifasComponent}
 ];
 
 @NgModule({
