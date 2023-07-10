@@ -1,11 +1,35 @@
-<div>
+<div class="divinput">
+    <input
+      name="value"
+      [(ngModel)]="valueF"
+      id="value"
+      type="text"
+      (input)="filtrarDatos(filtro.value)"
+      #filtro
+    />
+    <select (change)="filtrarCategorias(categorias.value)" #categorias>
+      <option value="">Todas</option>
+      <option value="Anime">Anime</option>
+      <option value="Accion">Acción</option>
+      <option value="Drama">Drama</option>
+      <option value="Fantasia">Fantasía</option>
+      <option value="Terror">Terror</option>
+      <option value="Comedia">Comedia</option>
+      <option value="Romance">Romance</option>
+      <option value="Infantil">Infantil</option>
+    </select>
+</div>
+<section>
     <ul>
-        <li *ngFor="let pelicula of peliculasList" routerLink="/peliculas/{{pelicula._id}}">
+        <li *ngFor="let pelicula of filtroList" routerLink="/peliculas/{{pelicula._id}}">
             <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
             <h3>{{pelicula.Nombre}}</h3>
             <p>{{pelicula.Duracion}}</p>
             <p>{{pelicula.Valoracion}}</p>
         </li>
     </ul>
-    <button *ngIf="authService.getRole() == 'admin'" routerLink="/gestionPeliculas">Añadir Pelicula</button>
+</section>
+
+<div class="contenedorBoton">
+    <button class="botonAñadir" *ngIf="authService.getRole() == 'admin'" routerLink="/gestionPeliculas">Añadir Pelicula</button> 
 </div>

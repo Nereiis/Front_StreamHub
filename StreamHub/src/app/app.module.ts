@@ -29,6 +29,7 @@ import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

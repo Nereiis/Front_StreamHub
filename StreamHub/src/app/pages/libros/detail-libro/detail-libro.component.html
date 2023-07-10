@@ -1,16 +1,25 @@
-<div *ngIf="libro">
-    <h2>{{libro.Nombre}}</h2>
-    <h4>{{libro.Autor}}</h4>
-    <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
-    <ul>
-        <li *ngFor="let genr of libro.Genero">
-            <p>{{genr}}</p>
-        </li>
-    </ul>
-    <h4>{{libro.Valoracion}}</h4>
-    <p>{{libro.Descripcion}}</p>
+<article *ngIf="libro">
     
-
-    <button *ngIf="authService.getRole() == 'admin'" (click)="deleteLibro()">Eliminar Libro</button>
-    <button *ngIf="authService.getRole() == 'admin'" (click)="editLibro(libro)">Editar Libro</button>
-</div>
+    <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
+    <div class="contenedorIconos">
+        <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+        <button class="button" routerLink="/libros/{{libro._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+    </div>
+    <div class="contenedorTexto">
+        <h1 class="nombre">{{libro.Nombre}}</h1>
+        <h4 class="autor">{{libro.Autor}}</h4>
+        <ul class="contenedorCategorias" >
+            <li class="categorias" *ngFor="let genr of libro.Genero">
+                    <p class="categoria">{{genr}}</p>
+            </li>
+        </ul>
+        
+        <p class="descripcion">{{libro.Descripcion}}</p>
+        <h4 class="valoracion">{{libro.Valoracion}}</h4>
+    </div>
+    <div class="contenedorBotones">
+        <button *ngIf="authService.getRole() == 'admin'" class="botonEditar" (click)="editLibro(libro)">Editar Libro</button>
+        <button *ngIf="authService.getRole() == 'admin'" class="botonEliminar" (click)="deleteLibro()">Eliminar Libro</button>
+        
+    </div>
+</article>

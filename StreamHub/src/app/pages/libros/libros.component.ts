@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { LibrosI } from 'src/app/models/interfaces';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { LibrosService } from 'src/app/services/libros/libros.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+
 
 @Component({
   selector: 'app-libros',
