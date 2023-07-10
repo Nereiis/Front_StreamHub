@@ -26,6 +26,7 @@ import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-peli
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 import { PreviewPeliculaComponent } from './pages/peliculas/form-pelicula/preview-pelicula/preview-pelicula.component';
 import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resena-pelicula/resena-pelicula.component';
+import { FavoritosComponent } from './pages/peliculas/detail-pelicula/favoritos/favoritos.component';
 
 
 
@@ -53,7 +54,8 @@ import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resen
     FormPeliculaComponent,
     ResenaPeliculaComponent,
     PreviewPeliculaComponent,
-    TarifasComponent
+    TarifasComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,

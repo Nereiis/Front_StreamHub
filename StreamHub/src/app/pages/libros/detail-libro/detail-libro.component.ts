@@ -36,4 +36,11 @@ export class DetailLibroComponent {
 
   }
 
+  addFavoritos(){
+    console.log("he llegado");
+    
+    const user = JSON.parse(String(this.authService.getCurrentUser()));
+    this.authService.addLibroFavorito(user._id, this.libro._id).subscribe();
+  }
+
 }
