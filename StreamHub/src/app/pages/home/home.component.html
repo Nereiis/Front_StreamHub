@@ -1,1 +1,51 @@
-<p>home works!</p>
+
+<div class="first-component">
+    <section>
+        <h1>Disfruta de todo el contenido ilimitado. Donde, como y cuando quieras</h1>
+        <div>
+            <button routerLink="/register" type="submit">
+                Suscribete
+            </button>
+        </div>
+    </section>
+</div>
+
+<div class="second-component">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Novedad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/tarifas">Tarifas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Todo esto y mucho más</a>
+      </li>
+    </ul>
+    <div class="card-body">
+        <div class="body-img">
+            <img src="https://images.vexels.com/media/users/3/253835/isolated/preview/a072bc46acbb577c0a7e207dad3fdf39-trazo-de-color-de-palomitas-de-cine.png">
+        </div>
+        <div class="body-text">
+            <h5 class="card-title">Todo nuestro contenido desde 5'95€</h5>
+            <p class="card-text">Consigue un precio especial con el plan Estándar con anuncios</p>    
+            <a routerLink="/tarifas" class="btn btn-primary">Más información</a>   
+        </div>
+    </div>
+</div>
+
+<div class="contain mt-3 p-4">
+	<!-- Trending Movies -->
+  
+  <div class="row">
+    <h5> Catálogo </h5>
+		<div class="rowposter">
+			<ng-container *ngFor="let p of peliculasList">
+                <div class="card" routerLink="/peliculas/{{p._id}}">
+                    <img src="{{p.Portada}}" class="rowimg largeposter" alt="..." >
+                    <h4>{{p.Nombre}}</h4>
+                </div>
+			</ng-container>	
+		</div>
+  </div>
+</div>

@@ -18,9 +18,8 @@
         <h4 class="valoracion">{{libro.Valoracion}}</h4>
     </div>
     <div class="contenedorBotones">
-        <button class="botonEditar" (click)="editLibro(libro)">Editar Libro</button>
-        <button class="botonEliminar" (click)="deleteLibro()">Eliminar Libro</button>
+        <button *ngIf="authService.getRole() == 'admin'" class="botonEditar" (click)="editLibro(libro)">Editar Libro</button>
+        <button *ngIf="authService.getRole() == 'admin'" class="botonEliminar" (click)="deleteLibro()">Eliminar Libro</button>
         
     </div>
 </article>
-

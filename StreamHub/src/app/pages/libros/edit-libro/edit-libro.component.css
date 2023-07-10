@@ -1,0 +1,71 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 4%;
+  margin: 10px 0;
+  flex-direction: column;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000%;
+  height: 300px;
+}
+
+img {
+  height: 280px;
+}
+
+.contenedorimg {
+  height: 300px;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.contenedortexto {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 50%;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFC970;
+  margin: 5px 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+h3 {
+  margin: 7px 0;
+  font-size: 30px;
+}
+
+button {
+  margin: 5px 2px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=edit-libro.component.css.map */

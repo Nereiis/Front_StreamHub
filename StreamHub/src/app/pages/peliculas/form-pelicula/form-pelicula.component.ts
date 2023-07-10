@@ -40,7 +40,7 @@ export class FormPeliculaComponent {
       Trailer: [this.pelicula?.Trailer, [Validators.required]],
       Descripcion: [this.pelicula?.Descripcion, [Validators.required]],
       Genero: [this.pelicula?.Genero],
-      Reseña: [this.pelicula?.Reseña],
+      Resena: [this.pelicula?.Resena],
       Valoracion: [this.pelicula?.Valoracion],
     });
 

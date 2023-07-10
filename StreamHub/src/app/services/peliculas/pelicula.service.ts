@@ -18,7 +18,7 @@ export class PeliculasService {
     Genero: [],
     Descripcion: '',
     Valoracion: 0,
-    Reseña: []
+    Resena: []
   };
 
   public db_url : string = 'http://localhost:5000/peliculas';
@@ -45,6 +45,10 @@ export class PeliculasService {
     return this.http.put(`${this.db_url}/${id}`, pelicula);
   }
 
+  addReviewToPelicula(idPelicula:string, idReview:string) {
+    return this.http.put(`${this.db_url}/addReview/${idPelicula}`, {idReview});
+  }
+
   getOnePelicula() {
     return this.peliculaData;
   }
@@ -69,7 +73,7 @@ export class PeliculasService {
       Genero: [],
       Descripcion: '',
       Valoracion: 0,
-      Reseña: []
+      Resena: []
     };
   }
 }

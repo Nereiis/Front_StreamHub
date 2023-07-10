@@ -10,6 +10,18 @@
     <p>{{pelicula.Duracion}}</p>
     <p>{{pelicula.Descripcion}}</p>
 
-    <button (click)="deletePelicula()">Eliminar Pelicula</button>
-    <button (click)="editPelicula(pelicula)">Editar Pelicula</button>
+    <app-resena-pelicula [idPelicula]="pelicula._id"></app-resena-pelicula>
+
+    <h4>Reseñas: </h4>
+    <ul>
+        <li *ngFor="let resena of pelicula.Resena">
+            <!-- <p>{{getUser(resena)}}<p> -->
+            <p>{{resena.Titulo}}</p>
+            <p>{{resena.Comentario}}</p>
+            <p>{{resena.Valoracion}}</p>
+        </li>
+    </ul>
+
+    <button *ngIf="authService.getRole() == 'admin'" (click)="deletePelicula()">Eliminar Pelicula</button>
+    <button *ngIf="authService.getRole() == 'admin'" (click)="editPelicula(pelicula)">Editar Pelicula</button>
 </div>

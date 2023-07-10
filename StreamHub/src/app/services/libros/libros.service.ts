@@ -16,7 +16,7 @@ export class LibrosService {
     Genero: [],
     Descripcion: '',
     Valoracion: 0,
-    Reseña: []
+    Resena: []
   };
 
   public db_url : string = 'http://localhost:5000/libros';
@@ -66,7 +66,7 @@ export class LibrosService {
       Genero: [],
       Descripcion: '',
       Valoracion: 0,
-      Reseña: []
+      Resena: []
     };
   }
 }

@@ -10,10 +10,12 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./peliculas.component.scss']
 })
 export class PeliculasComponent {
+
   peliculasList!: PeliculasI[];
   categoriaList: PeliculasI[] = [];
   filtroList!: PeliculasI[];
   valueF:string = "";
+
   constructor(private service: PeliculasService, public authService: AuthService) {}
 
   ngOnInit(): void {
