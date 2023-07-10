@@ -51,6 +51,7 @@ import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resen
     DetailPeliculaComponent,
     FormPeliculaComponent,
     ResenaPeliculaComponent,
+    PreviewPeliculaComponent,
     TarifasComponent
   ],
   imports: [
