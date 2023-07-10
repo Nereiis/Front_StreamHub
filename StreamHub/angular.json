@@ -34,8 +34,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+              
             ]
           },
           "configurations": {

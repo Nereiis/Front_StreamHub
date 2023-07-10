@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,9 +14,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailLibroComponent } from './pages/libros/detail-libro/detail-libro.component';
 import { FormLibroComponent } from './pages/libros/form-libro/form-libro.component';
+import { EditLibroComponent } from './pages/libros/edit-libro/edit-libro.component';
+import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detail-pelicula.component';
+import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditLibroComponent } from './pages/libros/edit-libro/edit-libro.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { EditLibroComponent } from './pages/libros/edit-libro/edit-libro.compone
     DetailLibroComponent,
     FormLibroComponent,
     EditLibroComponent
+    DetailPeliculaComponent,
+    FormPeliculaComponent
   ],
   imports: [
     BrowserModule,

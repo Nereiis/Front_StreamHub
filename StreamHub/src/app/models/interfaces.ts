@@ -37,6 +37,7 @@ export interface SeriesI{
     Reseña: ResenasI[];
 }
 
+
 export interface LibrosI{
     _id: string;
     Portada: string;
@@ -48,3 +49,17 @@ export interface LibrosI{
     Reseña: ResenasI[];
 
 }
+
+export interface PeliculasI{
+    _id: string;
+    Portada:string,
+    Nombre:string,
+    Trailer: string,
+    Duracion: number,
+    Año: number,
+    Genero:string[],
+    Descripcion:string,
+    Valoracion:number,
+    Reseña: ResenasI[],
+    }
+
