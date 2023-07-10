@@ -1,3 +1,4 @@
+<h3>Vista previa:</h3>
 <div *ngIf="pelicula">
     <h2>{{pelicula.Nombre}}</h2>
     <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
@@ -6,10 +7,6 @@
             <p>{{genr}}</p>
         </li>
     </ul>
-    <h4>{{pelicula.Valoracion}}</h4>
     <p>{{pelicula.Duracion}}</p>
     <p>{{pelicula.Descripcion}}</p>
-
-    <button *ngIf="authService.getRole() == 'admin'" (click)="deletePelicula()">Eliminar Pelicula</button>
-    <button *ngIf="authService.getRole() == 'admin'" (click)="editPelicula(pelicula)">Editar Pelicula</button>
 </div>

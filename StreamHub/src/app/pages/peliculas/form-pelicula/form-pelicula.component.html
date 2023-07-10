@@ -32,7 +32,9 @@
     </div>
     
     <div class="col-12">
-        <button class="btn btn-primary" *ngIf="_id !== ''" type="submit">Editar pelicula </button>
-        <button class="btn btn-primary" *ngIf="_id === ''" type="submit">Crear pelicula </button>
+        <button class="btn btn-primary" *ngIf="_id != ''" type="submit">Editar pelicula </button>
+        <button class="btn btn-primary" *ngIf="_id == ''" type="submit">Crear pelicula </button>
     </div>
 </form>
+
+<app-preview-pelicula [pelicula]="pelicula"></app-preview-pelicula>
