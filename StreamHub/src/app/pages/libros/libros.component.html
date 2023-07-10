@@ -19,6 +19,7 @@
       <option value="Novela histórica">Novela histórica</option>
     </select>
 </div>
+
 <section>
     <ul>
         <li *ngFor="let libro of filtroList" >
@@ -40,5 +41,5 @@
     
 </section>
 <div class="contenedorBoton">
-<button class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
-</div>
+    <button  *ngIf="authService.getRole() == 'admin'" class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
+    </div>

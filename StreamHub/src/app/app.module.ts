@@ -25,6 +25,7 @@ import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detai
 import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +41,10 @@ import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-peli
     RegisterComponent,
     DetailSerieComponent,
     FormComponent,
-    PreviewSerieComponent
+    PreviewSerieComponent,
     DetailLibroComponent,
     FormLibroComponent,
-    EditLibroComponent
+    EditLibroComponent,
     DetailPeliculaComponent,
     FormPeliculaComponent
   ],
