@@ -12,13 +12,18 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { DetailSerieComponent } from './pages/series/detail-serie/detail-serie.component';
+import { FormComponent } from './pages/series/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PreviewSerieComponent } from './pages/series/form/preview-serie/preview-serie.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { DetailLibroComponent } from './pages/libros/detail-libro/detail-libro.component';
 import { FormLibroComponent } from './pages/libros/form-libro/form-libro.component';
 import { EditLibroComponent } from './pages/libros/edit-libro/edit-libro.component';
 import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detail-pelicula.component';
 import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +38,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PerfilComponent,
     LoginComponent,
     RegisterComponent,
+    DetailSerieComponent,
+    FormComponent,
+    PreviewSerieComponent
     DetailLibroComponent,
     FormLibroComponent,
     EditLibroComponent
@@ -46,7 +54,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

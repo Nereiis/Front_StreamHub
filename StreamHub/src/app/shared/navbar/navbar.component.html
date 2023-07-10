@@ -2,7 +2,7 @@
 <nav style="background-color: #E3F4F4;" class="navbar navbar-expand-lg ">
   <div class="container-fluid">
 		<img src="https://cdn.iconscout.com/icon/free/png-256/free-online-streaming-1891078-1597991.png" alt="Logo" width="30" height="29" class="d-inline-block align-text-top">
-    <a class="navbar-brand" href="#">StreamHub</a>
+    <a class="navbar-brand" routerLink="/">StreamHub</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,6 +17,11 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/libros">Libros</a>
         </li>
+      </ul>
+      <ul>
+        <li><a routerLink="/register" *ngIf="!token"> Registrar</a></li>
+        <li><a routerLink="/login" *ngIf="!token"> Iniciar sesión</a></li>
+        <li><button (click)="logOut()" *ngIf="token">Cerrar sesión</button></li>
       </ul>
 			<a routerLink="/">
       	<img src="https://cdn-icons-png.flaticon.com/512/7439/7439967.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">

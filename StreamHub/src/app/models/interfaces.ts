@@ -37,7 +37,6 @@ export interface SeriesI{
     Reseña: ResenasI[];
 }
 
-
 export interface LibrosI{
     _id: string;
     Portada: string;
@@ -61,5 +60,6 @@ export interface PeliculasI{
     Descripcion:string,
     Valoracion:number,
     Reseña: ResenasI[],
-    }
+}
+
 

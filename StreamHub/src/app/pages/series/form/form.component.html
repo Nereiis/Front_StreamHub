@@ -1,0 +1,35 @@
+<form [formGroup]="serieForm" (ngSubmit)="onClick()">
+    <div>
+        <label for="Portada"> Portada </label>
+        <input formControlName="Portada" type="text" id="Portada">
+        <p *ngIf="(submitted && serieForm?.get('Portada')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="Nombre"> Nombre </label>
+        <input formControlName="Nombre" type="text" id="Nombre">
+        <p *ngIf="(submitted && serieForm?.get('Nombre')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="Trailer"> Tráiler </label>
+        <input formControlName="Trailer" type="text" id="Trailer">
+        <p *ngIf="(submitted && serieForm?.get('Trailer')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div *ngFor="let genre of genres; let i=index">
+        <label>
+          <input type="checkbox" [checked]="serie.Genero.includes(genre.value)" id={{genre.value}} [value]="genre.value" (change)="onCheckboxChange($event)" />
+          {{genre.name}}
+        </label>
+    </div>
+    <div>
+        <label for="Descripcion"> Descripción </label>
+        <textarea formControlName="Descripcion" type="text" id="Descripcion"></textarea>
+        <p *ngIf="(submitted && serieForm?.get('Descripcion')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    
+    <div class="col-12">
+        <button class="btn btn-primary" *ngIf="_id !== ''" type="submit">Editar Serie </button>
+        <button class="btn btn-primary" *ngIf="_id === ''" type="submit">Crear Serie </button>
+    </div>
+</form>
+
+<app-preview-serie [serie]="serie"></app-preview-serie>

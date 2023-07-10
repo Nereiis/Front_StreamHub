@@ -1,0 +1,11 @@
+<h3>Vista previa:</h3>
+<div *ngIf="serie">
+    <h2>{{serie.Nombre}}</h2>
+    <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
+    <ul>
+        <li *ngFor="let genr of serie.Genero">
+            <p>{{genr}}</p>
+        </li>
+    </ul>
+    <p>{{serie.Descripcion}}</p>
+</div>
