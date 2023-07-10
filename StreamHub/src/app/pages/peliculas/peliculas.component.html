@@ -1,1 +1,11 @@
-<p>peliculas works!</p>
+<div>
+    <ul>
+        <li *ngFor="let pelicula of peliculasList" routerLink="/peliculas/{{pelicula._id}}">
+            <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
+            <h3>{{pelicula.Nombre}}</h3>
+            <p>{{pelicula.Duracion}}</p>
+            <p>{{pelicula.Valoracion}}</p>
+        </li>
+    </ul>
+    <button routerLink="/gestionPeliculas">Añadir Pelicula</button>
+</div>

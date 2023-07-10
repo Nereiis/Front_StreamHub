@@ -13,6 +13,10 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detail-pelicula.component';
+import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +30,16 @@ import { RegisterComponent } from './pages/register/register.component';
     LibrosComponent,
     PerfilComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DetailPeliculaComponent,
+    FormPeliculaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
