@@ -1,0 +1,19 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    
+
+    a{
+        margin-right: 10px;
+        padding: 2px 3px;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+}
