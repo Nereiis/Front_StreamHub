@@ -18,7 +18,7 @@ export class PeliculasService {
     Genero: [],
     Descripcion: '',
     Valoracion: 0,
-    Reseña: []
+    Resena: []
   };
 
   public db_url : string = 'http://localhost:5000/peliculas';
@@ -69,7 +69,7 @@ export class PeliculasService {
       Genero: [],
       Descripcion: '',
       Valoracion: 0,
-      Reseña: []
+      Resena: []
     };
   }
 }

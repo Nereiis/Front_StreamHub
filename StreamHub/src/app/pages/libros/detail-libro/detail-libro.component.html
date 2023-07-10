@@ -11,6 +11,6 @@
     <p>{{libro.Descripcion}}</p>
     
 
-    <button (click)="deleteLibro()">Eliminar Libro</button>
-    <button (click)="editLibro(libro)">Editar Libro</button>
+    <button *ngIf="authService.getRole() == 'admin'" (click)="deleteLibro()">Eliminar Libro</button>
+    <button *ngIf="authService.getRole() == 'admin'" (click)="editLibro(libro)">Editar Libro</button>
 </div>

@@ -34,7 +34,7 @@ export interface SeriesI{
     Descripcion: string;
     Capitulos: CapitulosI[];
     Valoracion: number;
-    Reseña: ResenasI[];
+    Resena: ResenasI[];
 }
 
 export interface LibrosI{
@@ -45,7 +45,7 @@ export interface LibrosI{
     Genero: string[];
     Descripcion: string;
     Valoracion: number;
-    Reseña: ResenasI[];
+    Resena: ResenasI[];
 
 }
 
@@ -59,7 +59,7 @@ export interface PeliculasI{
     Genero:string[],
     Descripcion:string,
     Valoracion:number,
-    Reseña: ResenasI[],
+    Resena: ResenasI[],
 }
 
 

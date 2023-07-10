@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LibrosI } from 'src/app/models/interfaces';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { LibrosService } from 'src/app/services/libros/libros.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LibrosComponent {
   filtroList!: LibrosI[];
   valueF:string = "";
 
-  constructor(private service: LibrosService) {}
+  constructor(private service: LibrosService, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.service.getLibros().subscribe((data: any) => {
