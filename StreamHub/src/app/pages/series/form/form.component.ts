@@ -38,7 +38,7 @@ export class FormComponent {
       Trailer: [this.serie?.Trailer, [Validators.required]],
       Descripcion: [this.serie?.Descripcion, [Validators.required]],
       Genero: [this.serie?.Genero],
-      Reseña: [this.serie?.Reseña],
+      Resena: [this.serie?.Resena],
       Valoracion: [this.serie?.Valoracion],
       Capitulos: [this.serie?.Capitulos],
     });

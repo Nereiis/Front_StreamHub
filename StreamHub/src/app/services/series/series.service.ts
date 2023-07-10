@@ -17,7 +17,7 @@ export class SeriesService {
     Descripcion: '',
     Capitulos: [],
     Valoracion: 0,
-    Reseña: []
+    Resena: []
   };
 
   public db_url : string = 'http://localhost:5000/series';
@@ -67,7 +67,7 @@ export class SeriesService {
       Descripcion: '',
       Capitulos: [],
       Valoracion: 0,
-      Reseña: []
+      Resena: []
     };
   }
 }

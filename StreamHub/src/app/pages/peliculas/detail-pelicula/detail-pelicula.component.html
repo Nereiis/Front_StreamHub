@@ -10,6 +10,17 @@
     <p>{{pelicula.Duracion}}</p>
     <p>{{pelicula.Descripcion}}</p>
 
+    <!-- <button (click)="addResena()">Añadir Reseña</button> -->
+
+    <h4>Reseñas: </h4>
+    <ul>
+        <li *ngFor="let resena of pelicula.Resena">
+            <p>{{resena.Titulo}}</p>
+            <p>{{resena.Comentario}}</p>
+            <p>{{resena.Valoracion}}</p>
+        </li>
+    </ul>
+
     <button *ngIf="authService.getRole() == 'admin'" (click)="deletePelicula()">Eliminar Pelicula</button>
     <button *ngIf="authService.getRole() == 'admin'" (click)="editPelicula(pelicula)">Editar Pelicula</button>
 </div>

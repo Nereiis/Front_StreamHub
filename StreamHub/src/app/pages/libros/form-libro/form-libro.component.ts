@@ -27,7 +27,7 @@ export class FormLibroComponent {
       Autor: [this.libro?.Autor, [Validators.required]],
       Descripcion: [this.libro?.Descripcion, [Validators.required]],
       Genero: [this.libro.Genero, [Validators.required]],
-      Reseña: [this.libro?.Reseña],
+      Resena: [this.libro?.Resena],
       Valoracion: [this.libro?.Valoracion],
     });
 
