@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { PeliculasI } from 'src/app/models/interfaces';
+import { PeliculasI, ResenasI, UsersI } from 'src/app/models/interfaces';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { PeliculasService } from 'src/app/services/peliculas/pelicula.service';
 
@@ -12,6 +12,7 @@ import { PeliculasService } from 'src/app/services/peliculas/pelicula.service';
 export class DetailPeliculaComponent {
   pelicula!: PeliculasI;
   id!: string;
+  // username?: string;
   
   constructor(private service: PeliculasService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
@@ -23,6 +24,14 @@ export class DetailPeliculaComponent {
       this.pelicula = data;
     });
   }
+
+  //  getUser(resena: ResenasI) {
+  //    this.authService.getUserById(String(resena.Username)).subscribe((data:any) => {
+  //     this.username = data.Username;
+  //    })
+  //    console.log("username:" + this.username);
+  //    //return resena.Username.Username;
+  //  }
 
   deletePelicula() {
     this.service.deletePelicula(this.id).subscribe((data:any) => {

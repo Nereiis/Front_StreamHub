@@ -1,0 +1,21 @@
+<form [formGroup]="resenaForm" (ngSubmit)="onClick()">
+    <div>
+        <label for="Titulo"> Título </label>
+        <input formControlName="Titulo" type="text" id="Titulo">
+        <p *ngIf="(submitted && resenaForm?.get('Titulo')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="Comentario"> Comentario </label>
+        <input formControlName="Comentario" type="text" id="Comentario">
+        <p *ngIf="(submitted && resenaForm?.get('Comentario')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    <div>
+        <label for="Valoracion"> Valoración </label>
+        <input formControlName="Valoracion" type="number" id="Valoracion">
+        <p *ngIf="(submitted && resenaForm?.get('Valoracion')?.hasError('required'))">Este campo es requerido</p>
+    </div>
+    
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Comentar</button>
+    </div>
+</form>

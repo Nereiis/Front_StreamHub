@@ -45,6 +45,10 @@ export class PeliculasService {
     return this.http.put(`${this.db_url}/${id}`, pelicula);
   }
 
+  addReviewToPelicula(idPelicula:string, idReview:string) {
+    return this.http.put(`${this.db_url}/addReview/${idPelicula}`, {idReview});
+  }
+
   getOnePelicula() {
     return this.peliculaData;
   }
