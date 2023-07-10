@@ -1,0 +1,15 @@
+<div *ngIf="pelicula">
+    <h2>{{pelicula.Nombre}}</h2>
+    <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
+    <ul>
+        <li *ngFor="let genr of pelicula.Genero">
+            <p>{{genr}}</p>
+        </li>
+    </ul>
+    <h4>{{pelicula.Valoracion}}</h4>
+    <p>{{pelicula.Duracion}}</p>
+    <p>{{pelicula.Descripcion}}</p>
+
+    <button (click)="deletePelicula()">Eliminar Pelicula</button>
+    <button (click)="editPelicula(pelicula)">Editar Pelicula</button>
+</div>
