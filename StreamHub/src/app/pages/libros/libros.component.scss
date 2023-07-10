@@ -3,23 +3,27 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 0.5rem;
     border-radius: 0.7rem;
     padding-top: 0.3rem;
+    align-items: center;
   }
   input {
-    margin: 0 5px;
+    margin: 5px;
     width: 20%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    min-width: 300px;
   }
   select {
-    margin: 0 5px;
+    margin: 5px;
     width: 20%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    min-width: 300px;
   }
   
 //pintar los datos
@@ -34,6 +38,8 @@ ul{
     flex-wrap: wrap;
     width: 90%;
     gap: 2%;
+    justify-content: center;
+    align-items: center;
     
     
     
@@ -45,6 +51,7 @@ ul:hover > :not(:hover){
 
 li{
     width: 17%;
+    min-width: 240px;
     height: 440px;
     margin: 10px 0;
     display: flex;
@@ -52,7 +59,8 @@ li{
     justify-content: flex-start;
     align-items: flex-start;
     background-color: #C4DFDF;
-    
+    border-radius: 10px;
+
     
 }
 li:hover{
@@ -91,6 +99,8 @@ img{
     width: 100%;
     height: 100%;
     // transition: scale 400ms;
+    border-radius: 10px;
+
     
     
     
@@ -125,7 +135,7 @@ img{
 }
 
 .contenedorFooter{
-    height: 140px;
+    height: auto;
     width: 100%;
     
 }
@@ -137,6 +147,7 @@ img{
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
+    width: 200px;
 
 }
 
