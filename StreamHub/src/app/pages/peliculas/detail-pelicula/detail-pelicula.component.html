@@ -10,11 +10,12 @@
     <p>{{pelicula.Duracion}}</p>
     <p>{{pelicula.Descripcion}}</p>
 
-    <!-- <button (click)="addResena()">Añadir Reseña</button> -->
+    <app-resena-pelicula [idPelicula]="pelicula._id"></app-resena-pelicula>
 
     <h4>Reseñas: </h4>
     <ul>
         <li *ngFor="let resena of pelicula.Resena">
+            <!-- <p>{{getUser(resena)}}<p> -->
             <p>{{resena.Titulo}}</p>
             <p>{{resena.Comentario}}</p>
             <p>{{resena.Valoracion}}</p>

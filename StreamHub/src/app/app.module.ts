@@ -25,6 +25,7 @@ import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detai
 import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 import { PreviewPeliculaComponent } from './pages/peliculas/form-pelicula/preview-pelicula/preview-pelicula.component';
+import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resena-pelicula/resena-pelicula.component';
 
 
 
@@ -49,9 +50,8 @@ import { PreviewPeliculaComponent } from './pages/peliculas/form-pelicula/previe
     EditLibroComponent,
     DetailPeliculaComponent,
     FormPeliculaComponent,
-    TarifasComponent,
-    PreviewPeliculaComponent
-
+    ResenaPeliculaComponent,
+    TarifasComponent
   ],
   imports: [
     BrowserModule,

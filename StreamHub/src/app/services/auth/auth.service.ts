@@ -29,6 +29,14 @@ export class AuthService {
     return sessionStorage.getItem('token');
   }
 
+  getCurrentUser() {
+    return sessionStorage.getItem('user');
+  }
+
+  getUserById(id:string){
+    return this.http.get(`${this.db_url}/users/${id}`);
+  }
+
   getRole(){
     let user = JSON.parse(String(sessionStorage.getItem('user')));
     return user?.Role;
