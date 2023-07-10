@@ -23,6 +23,7 @@ import { FormLibroComponent } from './pages/libros/form-libro/form-libro.compone
 import { EditLibroComponent } from './pages/libros/edit-libro/edit-libro.component';
 import { DetailPeliculaComponent } from './pages/peliculas/detail-pelicula/detail-pelicula.component';
 import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-pelicula.component';
+import { PreviewPeliculaComponent } from './pages/peliculas/form-pelicula/preview-pelicula/preview-pelicula.component';
 
 
 @NgModule({
@@ -40,12 +41,13 @@ import { FormPeliculaComponent } from './pages/peliculas/form-pelicula/form-peli
     RegisterComponent,
     DetailSerieComponent,
     FormComponent,
-    PreviewSerieComponent
+    PreviewSerieComponent,
     DetailLibroComponent,
     FormLibroComponent,
-    EditLibroComponent
+    EditLibroComponent,
     DetailPeliculaComponent,
-    FormPeliculaComponent
+    FormPeliculaComponent,
+    PreviewPeliculaComponent
   ],
   imports: [
     BrowserModule,

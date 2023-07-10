@@ -40,5 +40,5 @@
     
 </section>
 <div class="contenedorBoton">
-<button class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
+<button *ngIf="authService.getRole() == 'admin'" class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
 </div>

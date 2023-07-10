@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { LibrosI } from 'src/app/models/interfaces';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { LibrosService } from 'src/app/services/libros/libros.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class DetailLibroComponent {
   libro!: LibrosI;
   id!: string;
 
-  constructor (private service: LibrosService, private activatedRouter: ActivatedRoute, private router: Router) {}
+  constructor (private service: LibrosService, private activatedRouter: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
   ngOnInit(): void{
     this.activatedRouter.paramMap.subscribe((params) => {

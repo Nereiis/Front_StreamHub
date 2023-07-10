@@ -7,5 +7,5 @@
             <p>{{pelicula.Valoracion}}</p>
         </li>
     </ul>
-    <button routerLink="/gestionPeliculas">Añadir Pelicula</button>
+    <button *ngIf="authService.getRole() == 'admin'" routerLink="/gestionPeliculas">Añadir Pelicula</button>
 </div>

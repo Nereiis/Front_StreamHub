@@ -14,11 +14,10 @@
         <input formControlName="Autor" type="text" id="Autor">
         <p *ngIf="(submitted && libroForm?.get('Autor')?.hasError('required'))">Este campo es requerido</p>
     </div>
-    <div *ngFor="let genre of genres; let i=index">
-        <label>
-          <input type="checkbox" [checked]="libro.Genero.includes(genre.value)" id={{genre.value}} [value]="genre.value" (change)="onCheckboxChange($event)" />
-          {{genre.name}}
-        </label>
+    <div class="divinput">
+        <label for="Genero">Género</label>
+        <input id="Genero"  formControlName="Genero" type="text"/>
+        <p *ngIf= "(submitted && libroForm?.get('Genero')?.hasError('required'))">Este campo es requerido</p>
     </div>
     <div>
         <label for="Descripcion"> Descripción </label>
@@ -27,7 +26,22 @@
     </div>
     
     <div class="col-12">
-        <button class="btn btn-primary" *ngIf="_id !== ''" type="submit">Editar libro </button>
-        <button class="btn btn-primary" *ngIf="_id === ''" type="submit">Crear libro </button>
+        <button class="btn btn-primary" *ngIf="_id != ''" type="submit">Editar libro </button>
+        <button class="btn btn-primary" *ngIf="_id == ''" type="submit">Crear libro </button>
     </div>
 </form>
+
+<div class="product" *ngIf="libro">
+    <article>
+        <div class="contenedorimg">
+            <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
+        </div>
+        <div class="contenedortexto">
+            <h3>Nombre: {{libro.Nombre}}</h3>
+            <p class="price">Autor: {{libro.Autor}}</p>
+            <p class="price">Género: {{libro.Genero}}</p>
+            <p class="description">Descripción: {{libro.Descripcion}}</p>
+            
+        </div>
+    </article>
+</div>

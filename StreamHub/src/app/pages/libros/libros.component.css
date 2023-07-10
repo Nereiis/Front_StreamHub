@@ -1,0 +1,136 @@
+@charset "UTF-8";
+.divinput {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  border-radius: 0.7rem;
+  padding-top: 0.3rem;
+  align-items: center;
+}
+
+input {
+  margin: 5px;
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 300px;
+}
+
+select {
+  margin: 5px;
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 300px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+ul:hover > :not(:hover) {
+  opacity: 0.4;
+}
+
+li {
+  width: 17%;
+  min-width: 240px;
+  height: 440px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #C4DFDF;
+  border-radius: 10px;
+}
+
+li:hover {
+  border: 5px solid rgb(49, 49, 49);
+}
+
+li:hover > .contenedorFooter > .contenedorBotones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+li:hover > .contenedorFooter > P {
+  font-size: 12px;
+  height: 50px;
+}
+
+p {
+  height: 100px;
+  width: 90%;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 10px 5%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.contenedorImagen {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorBotones {
+  display: none;
+  margin: 15px 5%;
+  align-items: end;
+  width: 90%;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  font-weight: bold;
+}
+
+.contenedorFooter {
+  height: auto;
+  width: 100%;
+}
+
+.botonAñadir {
+  margin: 30px 7%;
+  border: none;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.contenedorBoton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=libros.component.css.map */
