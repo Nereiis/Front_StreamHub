@@ -13,6 +13,7 @@ export class DetailSerieComponent {
   serie!: SeriesI;
   id!: string;
   user!: UsersI;
+  value: number = 3;
   
   constructor(private service: SeriesService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
 

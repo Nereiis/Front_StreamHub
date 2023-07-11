@@ -11,7 +11,7 @@
     </div>
     <div>
         <label for="Valoracion"> Valoración </label>
-        <input formControlName="Valoracion" type="number" id="Valoracion">
+        <p-rating [(ngModel)]="value" [cancel]="false" formControlName="Valoracion"></p-rating>
         <p *ngIf="(submitted && resenaForm?.get('Valoracion')?.hasError('required'))">Este campo es requerido</p>
     </div>
     

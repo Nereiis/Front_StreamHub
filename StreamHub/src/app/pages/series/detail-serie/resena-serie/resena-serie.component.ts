@@ -16,6 +16,7 @@ export class ResenaSerieComponent {
   resenaForm!: FormGroup;
   submitted: boolean = false;
   resena!: ResenasI;
+  value: number = 3;
 
   constructor(private authService: AuthService, private serieService: SeriesService, private resenaService: ResenaService, private form: FormBuilder, private router: Router) {}
 
