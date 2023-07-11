@@ -12,6 +12,7 @@ import { PeliculasService } from 'src/app/services/peliculas/pelicula.service';
 export class DetailPeliculaComponent {
   pelicula!: PeliculasI;
   id!: string;
+  user!: UsersI;
   // username?: string;
   
   constructor(private service: PeliculasService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
@@ -31,7 +32,9 @@ export class DetailPeliculaComponent {
       } else {
         this.pelicula.Valoracion = sum/this.pelicula.Resena.length;
       }
-    });
+    })
+    this.user = JSON.parse(String(this.authService.getCurrentUser()));
+    //console.log(this.user);
   }
 
   //  getUser(resena: ResenasI) {
@@ -52,5 +55,12 @@ export class DetailPeliculaComponent {
   editPelicula(pelicula:PeliculasI) {
     this.service.editPelicula(pelicula);
     this.router.navigate(['/gestionPeliculas']);
+  }
+
+   addFavoritos(){
+    if(!this.user.PeliculasFavoritas.includes(this.pelicula._id)) {
+      this.user.PeliculasFavoritas.push(this.pelicula._id);
+      this.authService.addPeliculaFavorita(this.user._id, this.pelicula._id).subscribe();
+    }
   }
 }
