@@ -16,6 +16,7 @@ export class ResenaPeliculaComponent {
   resenaForm!: FormGroup;
   submitted: boolean = false;
   resena!: ResenasI;
+  value: number = 3;
 
   constructor(private authService: AuthService, private peliculaService: PeliculasService, private resenaService: ResenaService, private form: FormBuilder, private router: Router) {}
 
@@ -27,6 +28,7 @@ export class ResenaPeliculaComponent {
     });
 
     this.resenaForm.valueChanges.subscribe((data) => {
+      console.log(data);
       this.resena = data;
     })
 

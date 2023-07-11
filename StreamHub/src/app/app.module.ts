@@ -29,9 +29,7 @@ import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resen
 import { FavoritosComponent } from './pages/peliculas/detail-pelicula/favoritos/favoritos.component';
 import { ResenaLibroComponent } from './pages/libros/detail-libro/resena-libro/resena-libro.component';
 import { ResenaSerieComponent } from './pages/series/detail-serie/resena-serie/resena-serie.component';
-
-
-
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -66,7 +64,8 @@ import { ResenaSerieComponent } from './pages/series/detail-serie/resena-serie/r
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
   ],
   providers: [
     {
