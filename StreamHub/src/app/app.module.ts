@@ -27,9 +27,7 @@ import { TarifasComponent } from './pages/tarifas/tarifas.component';
 import { PreviewPeliculaComponent } from './pages/peliculas/form-pelicula/preview-pelicula/preview-pelicula.component';
 import { ResenaPeliculaComponent } from './pages/peliculas/detail-pelicula/resena-pelicula/resena-pelicula.component';
 import { FavoritosComponent } from './pages/peliculas/detail-pelicula/favoritos/favoritos.component';
-
-
-
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -62,7 +60,8 @@ import { FavoritosComponent } from './pages/peliculas/detail-pelicula/favoritos/
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
   ],
   providers: [
     {
