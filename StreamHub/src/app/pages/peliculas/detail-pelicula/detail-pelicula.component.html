@@ -27,7 +27,7 @@
             <!-- <p>{{getUser(resena)}}<p> -->
             <p>{{resena.Titulo}}</p>
             <p>{{resena.Comentario}}</p>
-            <p-rating [(ngModel)]="resena.Valoracion" [cancel]="false"></p-rating>
+            <p-rating [(ngModel)]="resena.Valoracion" [cancel]="false" [readonly]="true"></p-rating>
         </li>
     </ul>
     <div class="contenedorBotones">
