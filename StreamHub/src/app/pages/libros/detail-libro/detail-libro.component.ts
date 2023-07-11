@@ -22,9 +22,19 @@ export class DetailLibroComponent {
     })
     this.service.getLibroById(this.id).subscribe((data:any) => {
       this.libro = data;
+      let sum:number = 0;
+      for (let i = 0; i < this.libro.Resena.length; i++) {
+        sum += this.libro.Resena[i].Valoracion;
+      }
+      if(this.libro.Resena.length === 0) {
+        this.libro.Valoracion = 0;
+      } else {
+        this.libro.Valoracion = sum/this.libro.Resena.length;
+      }
+      
     })
     this.user = JSON.parse(String(this.authService.getCurrentUser()));
-    console.log(this.user);
+    //console.log(this.user);
   }
 
   deleteLibro(){

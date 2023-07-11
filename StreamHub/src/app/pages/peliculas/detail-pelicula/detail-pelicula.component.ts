@@ -22,6 +22,15 @@ export class DetailPeliculaComponent {
     })
     this.service.getPeliculaById(this.id).subscribe((data:any) => {
       this.pelicula = data;
+      let sum:number = 0;
+      for (let i = 0; i < this.pelicula.Resena.length; i++) {
+        sum += this.pelicula.Resena[i].Valoracion;
+      }
+      if(this.pelicula.Resena.length === 0) {
+        this.pelicula.Valoracion = 0;
+      } else {
+        this.pelicula.Valoracion = sum/this.pelicula.Resena.length;
+      }
     });
   }
 

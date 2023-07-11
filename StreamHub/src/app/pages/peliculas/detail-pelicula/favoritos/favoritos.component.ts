@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './favoritos.component.html',
   styleUrls: ['./favoritos.component.scss']
 })
+
 export class FavoritosComponent {
 
 }

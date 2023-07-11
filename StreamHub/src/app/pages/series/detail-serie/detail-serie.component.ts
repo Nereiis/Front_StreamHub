@@ -21,6 +21,15 @@ export class DetailSerieComponent {
     })
     this.service.getSerieById(this.id).subscribe((data:any) => {
       this.serie = data;
+      let sum:number = 0;
+      for (let i = 0; i < this.serie.Resena.length; i++) {
+        sum += this.serie.Resena[i].Valoracion;
+      }
+      if(this.serie.Resena.length === 0) {
+        this.serie.Valoracion = 0;
+      } else {
+        this.serie.Valoracion = sum/this.serie.Resena.length;
+      }
     });
   }
 

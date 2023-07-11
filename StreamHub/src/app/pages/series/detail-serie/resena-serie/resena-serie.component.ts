@@ -1,24 +1,23 @@
-import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ResenasI, UsersI } from 'src/app/models/interfaces';
-import { PeliculasService } from 'src/app/services/peliculas/pelicula.service';
+import { ResenasI } from 'src/app/models/interfaces';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ResenaService } from 'src/app/services/resena/resena.service';
+import { SeriesService } from 'src/app/services/series/series.service';
 
 @Component({
-  selector: 'app-resena-pelicula',
-  templateUrl: './resena-pelicula.component.html',
-  styleUrls: ['./resena-pelicula.component.scss']
+  selector: 'app-resena-serie',
+  templateUrl: './resena-serie.component.html',
+  styleUrls: ['./resena-serie.component.scss']
 })
-export class ResenaPeliculaComponent {
-  @Input() idPelicula!: string;
+export class ResenaSerieComponent {
+  @Input() idSerie!: string;
   resenaForm!: FormGroup;
   submitted: boolean = false;
   resena!: ResenasI;
-  value: number = 3;
 
-  constructor(private authService: AuthService, private peliculaService: PeliculasService, private resenaService: ResenaService, private form: FormBuilder, private router: Router) {}
+  constructor(private authService: AuthService, private serieService: SeriesService, private resenaService: ResenaService, private form: FormBuilder, private router: Router) {}
 
   ngOnInit() : void {
     this.resenaForm = this.form.group({
@@ -28,11 +27,10 @@ export class ResenaPeliculaComponent {
     });
 
     this.resenaForm.valueChanges.subscribe((data) => {
-      console.log(data);
       this.resena = data;
     })
 
-    console.log(this.idPelicula);
+    console.log(this.idSerie);
   }
 
   onClick() {
@@ -43,7 +41,7 @@ export class ResenaPeliculaComponent {
         this.resenaForm.reset();
         this.submitted = false;
         console.log(data._id);
-        this.peliculaService.addReviewToPelicula(this.idPelicula, data._id).subscribe((data2:any) => {
+        this.serieService.addReviewToSerie(this.idSerie, data._id).subscribe((data2:any) => {
           window.location.reload();
         });
       });
