@@ -1,69 +1,207 @@
-section{
+// section{
+//     display: flex;
+//     justify-content:center;
+//     align-items: center;
+//     width: 100%;
+//     gap: 4%;
+//     margin: 10px 0;
+//     flex-direction: column;
+// }
+// article{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 1000%;
+//     height: 300px;
+    
+// }
+
+// img{
+//     height: 280px;
+    
+// }
+// .contenedorimg{
+//     height: 300px;
+//     width: 50%;
+//     display: flex;
+//     justify-content: end;
+//     align-items: center;
+// } 
+
+// .contenedortexto{
+//     display: flex;
+//     flex-direction: column;
+//     height: 150px;
+//     width: 50%;
+    
+// }
+
+// .price{
+//     font-size: 24px;
+//     font-weight: bold;
+//     color: #FFC970;
+//     margin: 5px 0;
+// }
+// p{
+//     margin: 5px 0;
+// }
+// h3{
+// margin: 7px 0;
+// font-size: 30px;
+// }
+// button{
+//     margin: 5px 2px;
+// }
+
+// .product{
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// width: 100%;
+// }
+
+// form{
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     flex-wrap: wrap;
+// } 
+
+
+form {
     display: flex;
-    justify-content:center;
-    align-items: center;
-    width: 100%;
-    gap: 4%;
-    margin: 10px 0;
     flex-direction: column;
-}
-article{
+    max-width: 400px;
+    margin: 0 auto;
+  
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+  
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+  
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 5px #007bff;
+        }
+      }
+  
+      p {
+        color: red;
+        margin-top: 5px;
+      }
+    }
+  
+    .divinput {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+  
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+  
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 5px #007bff;
+        }
+      }
+  
+      p {
+        color: red;
+        margin-top: 5px;
+      }
+    }
+  
+    .col-12 {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+  
+  .product {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 1000%;
-    height: 300px;
-    
-}
-
-img{
-    height: 280px;
-    
-}
-.contenedorimg{
-    height: 300px;
-    width: 50%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-} 
-
-.contenedortexto{
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    width: 50%;
-    
-}
-
-.price{
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFC970;
-    margin: 5px 0;
-}
-p{
-    margin: 5px 0;
-}
-h3{
-margin: 7px 0;
-font-size: 30px;
-}
-button{
-    margin: 5px 2px;
-}
-
-.product{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-}
-
-form{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-} 
+    margin-top: 20px;
+  
+    article {
+      display: flex;
+      align-items: center;
+      max-width: 600px;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 4px;
+  
+      .contenedorimg {
+        flex: 0 0 200px;
+        margin-right: 20px;
+  
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+      }
+  
+      .contenedortexto {
+        flex: 1;
+  
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+  
+        p {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+  
+        .price {
+          font-weight: bold;
+        }
+  
+        .description {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  

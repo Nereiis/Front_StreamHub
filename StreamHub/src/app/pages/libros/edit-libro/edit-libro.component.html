@@ -25,8 +25,9 @@
             <input id="Descripcion"  formControlName="Descripcion" type="text"/>
             <p *ngIf= "(submitted && libroForm?.get('Descripcion')?.hasError('required'))">Este campo es requerido</p>
         </div>
-        
-        <button>Editar libro</button>
+        <div class="col-12">
+            <button class="btn btn-primary">Editar libro</button>
+        </div>
     </form>
     
     <div class="product" *ngIf="libro">
