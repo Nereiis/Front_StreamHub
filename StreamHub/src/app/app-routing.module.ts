@@ -19,7 +19,7 @@ import { CheckSessionComponent } from './pages/check-session/check-session.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: CheckSessionComponent },
+  { path: 'home', component: CheckSessionComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'libros', component: LibrosComponent, canActivate:[authGuard]},
