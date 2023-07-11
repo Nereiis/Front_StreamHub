@@ -23,7 +23,7 @@ export class LoginComponent {
       Password: ["", [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}')]]
     })
     if(this.authApi.getToken()){
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
 
   }
@@ -37,7 +37,7 @@ export class LoginComponent {
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('user', JSON.stringify(data.user));
           location.reload();
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
           
         },(error)=>{
           console.log(error.error.message);
