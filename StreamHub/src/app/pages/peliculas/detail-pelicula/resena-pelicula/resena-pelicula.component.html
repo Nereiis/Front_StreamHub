@@ -1,6 +1,6 @@
 <form [formGroup]="resenaForm" (ngSubmit)="onClick()">
     <div>
-        <label for="Titulo"> Título </label>
+        <label for="Titulo"> Título de la Reseña </label>
         <input formControlName="Titulo" type="text" id="Titulo">
         <p *ngIf="(submitted && resenaForm?.get('Titulo')?.hasError('required'))">Este campo es requerido</p>
     </div>
@@ -16,6 +16,6 @@
     </div>
     
     <div class="col-12">
-        <button class="btn btn-primary" type="submit">Comentar</button>
+        <button class="btn btn-primary" type="submit">Añadir reseña</button>
     </div>
 </form>

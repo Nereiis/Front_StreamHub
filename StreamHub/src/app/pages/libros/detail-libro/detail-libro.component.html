@@ -8,6 +8,8 @@
     <div class="contenedorTexto">
         <h1 class="nombre">{{libro.Nombre}}</h1>
         <h4 class="autor">{{libro.Autor}}</h4>
+
+        <h6>Genero</h6>
         <ul class="contenedorCategorias" >
             <li class="categorias" *ngFor="let genr of libro.Genero">
                     <p class="categoria">{{genr}}</p>

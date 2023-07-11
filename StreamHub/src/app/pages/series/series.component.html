@@ -19,16 +19,26 @@
       <option value="Infantil">Infantil</option>
     </select>
 </div>
+
 <section>
     <ul>
-        <li *ngFor="let serie of filtroList" routerLink="/series/{{serie._id}}">
-            <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
-            <h3>{{serie.Nombre}}</h3>
-            <p>{{serie.Valoracion}}</p>
+        <li *ngFor="let serie of filtroList" routerLink="/peliculas/{{serie._id}}">
+            <div class="contenedorImagen">
+                <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
+            </div>
+            <div class="contenedorFooter">
+                <div class="contenedorBotones">
+                    <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+                    <button class="button" routerLink="/series/{{serie._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+                </div>
+                <h6>{{serie.Nombre}}</h6>
+                <p>{{serie.Valoracion}}</p>
+            </div>
+            
         </li>
     </ul>
-    
 </section>
+
 <div class="contenedorBoton">
     <button class="botonAñadir" *ngIf="authService.getRole() == 'admin'" routerLink="/gestionSeries">Añadir Serie</button>
 </div>

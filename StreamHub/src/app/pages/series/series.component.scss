@@ -8,20 +8,175 @@
     border-radius: 0.7rem;
     padding-top: 0.3rem;
     align-items: center;
+
+    input {
+      margin: 5px;
+      width: 20%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 300px;
+    }
+
+    select {
+      margin: 5px;
+      width: 20%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 300px;
+    }
+
   }
-  input {
-    margin: 5px;
-    width: 20%;
+  
+
+  section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul{
+      display:flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 2%;
+      justify-content: center;
+      align-items: center;
+
+        li{
+          width: 400px;
+          min-width: 240px;
+          height: 450px;
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          background-color: #C4DFDF;
+          border-radius: 10px;
+
+          h6{
+            margin-top: 5px;
+            text-align: center;
+          }
+
+          p{
+            text-align: center;
+            height: 100px;
+            width: 90%;
+            font-weight: bold;
+            font-size: 15px;
+            margin: 10px 5%;
+            
+        }
+
+        .contenedorImagen{
+          // overflow: hidden;
+          height: 300px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+      
+
+          img{
+            width: 100%;
+            height: 250px;
+            // transition: scale 400ms;
+            border-radius: 10px;
+          }
+
+        }
+          
+      }
+
+      li:hover{
+          border: 2px solid rgb(49, 49, 49);
+          border-radius: 10px;
+      }
+
+      li:hover > .contenedorFooter > .contenedorBotones{
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px; 
+      
+      }
+      
+      li:hover > .contenedorFooter > P{
+          font-size: 12px;
+          height: 50px
+      
+      }
+         
+  }
+
+}
+
+
+// ul:hover > :not(:hover){
+//     opacity:0.4;
+// }
+
+
+
+// img:hover{
+//     // scale: 120%;
+    
+    
+    
+// }
+
+
+
+
+
+.contenedorBotones{
+    display: none;
+    margin: 15px 5%;
+    align-items: end;
+    width: 90%;
+}
+
+.button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #C4DFDF;
+    
+    font-weight: bold;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+}
+
+.contenedorFooter{
+    height: auto;
+    width: 100%;
+    
+}
+.botonAñadir{
+    margin: 30px 7%;
+    border: none;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    font-weight: bold;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 300px;
-  }
-  select {
-    margin: 5px;
-    width: 20%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 300px;
-  }
+    border-radius: 5px;
+    width: 200px;
+
+}
+
+.contenedorBoton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icon{
+    width: 60%;
+    filter: invert(1);
+    //filter: invert(17%) sepia(89%) saturate(5705%) hue-rotate(3deg) brightness(106%) contrast(93%);
+    
+}
