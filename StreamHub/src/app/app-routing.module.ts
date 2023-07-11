@@ -15,9 +15,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { authGuard } from './guards/auth.guard';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
+import { CheckSessionComponent } from './pages/check-session/check-session.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: CheckSessionComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'libros', component: LibrosComponent, canActivate:[authGuard]},
