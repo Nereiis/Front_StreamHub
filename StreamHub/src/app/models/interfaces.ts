@@ -4,7 +4,9 @@ export interface UsersI{
     Username: string;
     Email: string;
     Password: string;
-    Favoritos: string[];
+    PeliculasFavoritas: string[];
+    SeriesFavoritas: string[];
+    LibrosFavoritos: string[];
     Role: string;
 }
 

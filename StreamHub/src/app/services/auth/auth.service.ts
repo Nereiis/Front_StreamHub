@@ -41,4 +41,16 @@ export class AuthService {
     let user = JSON.parse(String(sessionStorage.getItem('user')));
     return user?.Role;
   }
+
+  addPeliculaFavorita(id: string, idPelicula: string){
+    return this.http.put(`${this.db_url}/users/addPelicula/${id}`, {idPelicula})
+  }
+
+  addLibroFavorito(id: string, idLibro: string){
+    return this.http.put(`${this.db_url}/users/addLibro/${id}`, {idLibro})
+  }
+
+  addSerieFavorita(id: string, idSerie: string){
+    return this.http.put(`${this.db_url}/users/addSerie/${id}`, {idSerie})
+  }
 }
