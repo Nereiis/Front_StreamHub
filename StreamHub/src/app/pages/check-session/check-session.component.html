@@ -12,8 +12,21 @@
     <h3> Tus Favoritos </h3>
     <div>
       <ul>
-        <li *ngFor="let libro of librosFav">
-          {{libro}}
+        <li *ngFor="let libro of libros">
+          {{libro.Nombre}}
+          {{libro.Descripcion}}
+        </li>
+      </ul>
+      <ul>
+        <li *ngFor="let peli of pelis">
+          {{peli.Nombre}}
+          {{peli.Descripcion}}
+        </li>
+      </ul>
+      <ul>
+        <li *ngFor="let serie of series">
+          {{serie.Nombre}}
+          {{serie.Descripcion}}
         </li>
       </ul>
     </div>
