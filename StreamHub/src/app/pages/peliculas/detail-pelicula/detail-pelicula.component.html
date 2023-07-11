@@ -1,15 +1,24 @@
-<div *ngIf="pelicula">
+<article *ngIf="pelicula" class="article-container">
     <h2>{{pelicula.Nombre}}</h2>
     <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
-    <ul>
-        <li *ngFor="let genr of pelicula.Genero">
-            <p>{{genr}}</p>
-        </li>
-    </ul>
-    <h4>{{pelicula.Valoracion}}</h4>
-    <p>{{pelicula.Duracion}}</p>
-    <p>{{pelicula.Descripcion}}</p>
 
+    <div class="contenedorIconos">
+        <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+        <button class="button" routerLink="/peliculas/{{pelicula._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+    </div>
+
+    <div class="contenedorTexto">
+        <h4>{{pelicula.Valoracion}}</h4>
+        <p>{{pelicula.Duracion}}</p>
+        <p>{{pelicula.Descripcion}}</p>
+
+        <h6>Genero</h6>
+        <ul class="contenedorCategorias">
+            <li class="categorias" *ngFor="let genr of pelicula.Genero">
+                <p class="categoria">{{genr}}</p>
+            </li>
+        </ul>
+    </div>
     <app-resena-pelicula [idPelicula]="pelicula._id"></app-resena-pelicula>
 
     <h4>Reseñas: </h4>
@@ -21,7 +30,8 @@
             <p>{{resena.Valoracion}}</p>
         </li>
     </ul>
-
-    <button *ngIf="authService.getRole() == 'admin'" (click)="deletePelicula()">Eliminar Pelicula</button>
-    <button *ngIf="authService.getRole() == 'admin'" (click)="editPelicula(pelicula)">Editar Pelicula</button>
-</div>
+    <div class="contenedorBotones">
+        <button class="botonEliminar" *ngIf="authService.getRole() == 'admin'" (click)="deletePelicula()">Eliminar Pelicula</button>
+        <button class="botonEditar" *ngIf="authService.getRole() == 'admin'" (click)="editPelicula(pelicula)">Editar Pelicula</button>
+    </div>
+</article>

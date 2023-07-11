@@ -19,13 +19,23 @@
       <option value="Infantil">Infantil</option>
     </select>
 </div>
+
 <section>
     <ul>
         <li *ngFor="let pelicula of filtroList" routerLink="/peliculas/{{pelicula._id}}">
-            <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
-            <h3>{{pelicula.Nombre}}</h3>
-            <p>{{pelicula.Duracion}}</p>
-            <p>{{pelicula.Valoracion}}</p>
+            <div class="contenedorImagen">
+                <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
+            </div>
+            <div class="contenedorFooter">
+                <div class="contenedorBotones">
+                    <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+                    <button class="button" routerLink="/peliculas/{{pelicula._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+                </div>
+                <h6>{{pelicula.Nombre}}</h6>
+                <p>Duración: {{pelicula.Duracion}}minutos</p>
+                <p>{{pelicula.Valoracion}}</p>
+            </div>
+            
         </li>
     </ul>
 </section>

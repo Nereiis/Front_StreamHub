@@ -1,0 +1,106 @@
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C4DFDF;
+  
+    img {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 20px 0;
+        max-width: 800px;
+        
+        p{
+            text-align: justify;
+        }
+
+        .contenedorCategorias{
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+
+            .categorias{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+            
+            }
+
+            .categoria{
+                color: black;
+                background-color: #ffffff;
+                margin-top: 20px;
+                border-radius: 10px;
+                padding: 5px;
+                
+            }
+
+            
+        }
+    }
+    
+  
+    
+  
+    .contenedorBotones {
+      display: flex;
+      margin-bottom: 20px;
+    
+  
+        .botonEditar {
+        margin: 10px 7%;
+        border: none;
+        background-color: rgb(49, 49, 49);
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+        width: 170px;
+        }
+    
+        .botonEliminar {
+        margin: 10px 7%;
+        border: none;
+        background-color: rgb(209, 45, 45);
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+        width: 170px;
+        }
+
+    }
+  
+    .contenedorIconos {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #C4DFDF;
+      width: 100%;
+      max-width: 800px;
+    }
+  
+    .icon {
+      width: 60%;
+      filter: invert(1);
+    }
+  
+    .button {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background-color: #C4DFDF;
+      margin: 10px;
+    }
+  }
+  
