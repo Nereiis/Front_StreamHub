@@ -44,6 +44,10 @@ export class SeriesService {
     return this.http.put(`${this.db_url}/${id}`, serie);
   }
 
+  addReviewToSerie(idSerie:string, idReview:string) {
+    return this.http.put(`${this.db_url}/addReview/${idSerie}`, {idReview});
+  }
+
   getOneSerie() {
     return this.serieData;
   }
