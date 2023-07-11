@@ -52,13 +52,19 @@ export class DetailPeliculaComponent {
     this.router.navigate(['/gestionPeliculas']);
   }
 
-   addFavoritos(){
+  addFavoritos(){
     this.authService.getUserById(this.user._id).subscribe((data:any) => {
       if(!data.PeliculasFavoritas.includes(this.pelicula._id)) {
         this.favoritos.push(this.pelicula._id);
         this.authService.addPeliculaFavorita(this.user._id, this.pelicula._id).subscribe();
+      } else {
+        const index = this.favoritos.indexOf(this.pelicula._id, 0);
+        if (index > -1) {
+          this.favoritos.splice(index, 1);
+          this.authService.removePeliculaFavorita(this.user._id, this.pelicula._id).subscribe();
+        }
       }
     })
-    
   }
+  
 }

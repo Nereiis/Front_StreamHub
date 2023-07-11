@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ResenasI } from 'src/app/models/interfaces';
+import { ResenasI, UsersI } from 'src/app/models/interfaces';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { LibrosService } from 'src/app/services/libros/libros.service';
 import { ResenaService } from 'src/app/services/resena/resena.service';
