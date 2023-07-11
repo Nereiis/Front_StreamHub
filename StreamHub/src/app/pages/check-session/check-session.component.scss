@@ -1,12 +1,92 @@
-.parent {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  }
+// .parent {
+//   background-image: linear-gradient(310deg, #00b1f5 0, #31aef8 8.33%, #4fabf9 16.67%, #67a8f9 25%, #7ba4f8 33.33%, #8da1f6 41.67%, #9d9df2 50%, #ac99ed 58.33%, #b995e7 66.67%, #c591e0 75%, #d08ed9 83.33%, #da8ad0 91.67%, #e287c7 100%);
   
-  .div1 { grid-area: 1 / 1 / 3 / 7; }
-  .div2 { grid-area: 3 / 1 / 6 / 4; }
-  .div3 { grid-area: 3 / 4 / 6 / 7; }
-  .div4 { grid-area: 6 / 1 / 8 / 7; }
+//   }
+  
+//   .div1 { 
+    
+    
+
+//     .banner{
+//       object-fit: contain;
+//       width: 99.7%;
+      
+//     }
+//   }
+//   .div2 { 
+    
+//     text-align: center;
+//     margin-top: 15px;
+//   }
+//   .div3 { 
+//     margin-top: 15px;
+     
+//     text-align: center;
+    
+//   }
+//   .div4 {  }
+//   .div5 {  }
+//   .div6 {  }
+
+//   .contain {
+
+//     .rowposter {
+      
+//       display: flex;
+//       overflow-x: scroll;
+//       align-items: flex-start; 
+  
+//       .card {
+//         flex: 0 0 200px; 
+//         margin-right: 10px;
+//         margin-bottom: 10px;
+//         transition: transform 450ms;
+//         align-items: center;
+//         height: 250px;
+//         background-color: #C4DFDF;
+  
+//         .rowimg {
+//           width: 90%;
+//           height: 150px; 
+//           object-fit: contain; 
+          
+//         }
+  
+//         h4 {
+//           text-align: center;
+//           margin-top: 10px; 
+//           height: 100px;
+//           width: 90%;
+//           font-weight: bold;
+//           font-size: 15px;
+//           text-transform: uppercase;
+//         }
+  
+//         &:hover {
+//           transform: scale(1.02);
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+  
+//   .rowposter::-webkit-scrollbar {
+//     width: 8px;
+//   }
+  
+//   .rowposter::-webkit-scrollbar-track {
+//     background-color: transparent;
+//   }
+  
+//   .rowposter::-webkit-scrollbar-thumb {
+//     background-color: rgba(0, 0, 0, 0.5);
+//     border-radius: 4px;
+//   }
+  
+//   .rowposter::-webkit-scrollbar-thumb:hover {
+//     background-color: rgba(0, 0, 0, 0.7);
+//   }
+
+
+
+

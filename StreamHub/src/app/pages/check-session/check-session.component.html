@@ -1,34 +1,75 @@
-<div class="parent">
+<!-- <div class="parent">
   <div class="div1">
-    <h1> Todo tu contenido a un solo click </h1>
+    <img src="../../../assets/pexels-dana-tentis-370799.jpg" class="img-fluid" alt="...">
+    <h1> Evadirse es más fácil </h1>
+    <h4> Con un libro en la mano </h4>
   </div>
   <div class="div2">
     <h2> Últimas Novedades </h2>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Título de la tarjeta</h5>
+        <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+        <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+      </div>
+    </div>
   </div>
   <div class="div3">
     <h2> Perfil </h2>
-  </div>
-  <div class="div4">
-    <h3> Tus Favoritos </h3>
-    <div>
-      <ul>
-        <li *ngFor="let libro of libros">
-          {{libro.Nombre}}
-          {{libro.Descripcion}}
-        </li>
-      </ul>
-      <ul>
-        <li *ngFor="let peli of pelis">
-          {{peli.Nombre}}
-          {{peli.Descripcion}}
-        </li>
-      </ul>
-      <ul>
-        <li *ngFor="let serie of series">
-          {{serie.Nombre}}
-          {{serie.Descripcion}}
-        </li>
-      </ul>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Título de la tarjeta</h5>
+        <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+        <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+      </div>
     </div>
   </div>
+  <div class="div4">
+    <h3> Mis Películas </h3>
+      <div class="contain mt-3 p-4">
+        <div class="row">
+          <div class="rowposter">
+            <ng-container *ngFor="let p of pelis">
+                      <div class="card" routerLink="/peliculas/{{p._id}}">
+                          <img src="{{p.Portada}}" class="rowimg largeposter" alt="..." >
+                          <h4>{{p.Nombre}}</h4>
+                      </div>
+            </ng-container>	
+          </div>
+      </div>
+    </div>
   </div>
+  <div class="div5">
+    <h3> Mis Series </h3>
+    <div class="contain mt-3 p-4">
+      <div class="row">
+        <div class="rowposter">
+          <ng-container *ngFor="let s of series">
+                    <div class="card" routerLink="/seires/{{s._id}}">
+                        <img src="{{s.Portada}}" class="rowimg largeposter" alt="..." >
+                        <h4>{{s.Nombre}}</h4>
+                    </div>
+          </ng-container>	
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div6">
+    <h3> Mis Libros </h3>
+    <div class="contain mt-3 p-4">
+      <div class="row">
+        <div class="rowposter">
+          <ng-container *ngFor="let l of libros">
+                    <div class="card" routerLink="/libros/{{l._id}}">
+                        <img src="{{l.Portada}}" class="rowimg largeposter" alt="..." >
+                        <h4>{{l.Nombre}}</h4>
+                    </div>
+          </ng-container>	
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
