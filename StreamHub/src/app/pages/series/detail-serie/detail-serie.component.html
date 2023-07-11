@@ -2,7 +2,7 @@
     <h2>{{serie.Nombre}}</h2>
     <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
     <div class="contenedorIconos">
-        <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+        <a href="{{serie.Trailer}}"><button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button></a>
         <button class="button" routerLink="/series/{{serie._id}}" (click)="addFavoritos()"><img [ngClass]="{'fav': user.SeriesFavoritas.includes(id)}" class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
     </div>
     <ul>
