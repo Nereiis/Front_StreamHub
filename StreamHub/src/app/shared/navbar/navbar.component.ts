@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersI } from 'src/app/models/interfaces';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -9,9 +10,21 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class NavbarComponent {
   token:any;
+  user!: UsersI;
+
   constructor(private router:Router, private authService:AuthService){
+    
     this.token=this.authService.getToken();
   }
+  ngOnInit(): void{
+      
+    this.user = JSON.parse(String(this.authService.getCurrentUser()));
+    this.authService.getUserById(this.user._id).subscribe((data:any) =>{
+      console.log(this.user);
+      
+    })
+    }
+  
 
   logOut(){
     this.authService.logout();

@@ -3,10 +3,11 @@ a{
     color: black;
 }
 
+
 .register{
     display: flex;
     flex-direction: column;
-    
+    margin-top: 10px;
 
     a{
         margin-right: 10px;
@@ -16,4 +17,45 @@ a{
     a:hover{
         text-decoration: underline;
     }
+
+    li{
+        align-items: center;
+        justify-content: flex-end;
+        display: flex;
+        align-content: center;
+        gap: 10px;
+        margin-right: 10px;
+        
+    }
+}
+
+.userImage{
+    width: 8%;
+    
+}
+
+.userContainer{
+    display: flex;
+   
+}
+
+p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+.botonLogOut{
+    border: none;
+    border-radius: 10px;
+    background-color: #96BABA;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+
+
 }
