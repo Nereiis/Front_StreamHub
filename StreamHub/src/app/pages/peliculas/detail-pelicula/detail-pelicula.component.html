@@ -4,7 +4,7 @@
 
     <div class="contenedorIconos">
         <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
-        <button class="button" routerLink="/peliculas/{{pelicula._id}}" (click)="addFavoritos()"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+        <button class="button" routerLink="/peliculas/{{pelicula._id}}" (click)="addFavoritos()"><img [ngClass]="{'fav': favoritos.includes(id)}" class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
     </div>
 
     <div class="contenedorTexto">
