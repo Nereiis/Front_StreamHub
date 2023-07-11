@@ -57,6 +57,12 @@ export class DetailSerieComponent {
       if(!data.SeriesFavoritas.includes(this.serie._id)) {
         this.favoritos.push(this.serie._id);
         this.authService.addSerieFavorita(this.user._id, this.serie._id).subscribe();
+      } else {
+        const index = this.favoritos.indexOf(this.serie._id, 0);
+        if (index > -1) {
+          this.favoritos.splice(index, 1);
+          this.authService.removeSerieFavorita(this.user._id, this.serie._id).subscribe();
+        }
       }
     })
   }

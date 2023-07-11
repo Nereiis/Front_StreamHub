@@ -35,6 +35,7 @@ export class DetailLibroComponent {
       } else {
         this.libro.Valoracion = sum/this.libro.Resena.length;
       }
+      console.log(this.libro);
       
     })
     this.authService.getUserById(this.user._id).subscribe((data:any) => {
@@ -60,8 +61,18 @@ export class DetailLibroComponent {
       if(!data.LibrosFavoritos.includes(this.libro._id)) {
         this.favoritos.push(this.libro._id);
         this.authService.addLibroFavorito(this.user._id, this.libro._id).subscribe();
+      } else {
+        const index = this.favoritos.indexOf(this.libro._id, 0);
+        if (index > -1) {
+          this.favoritos.splice(index, 1);
+          this.authService.removeLibroFavorita(this.user._id, this.libro._id).subscribe();
+        }
       }
     })
+  }
+
+  getUsername(id:UsersI) {
+    console.log(id.Username);
   }
 
 }
