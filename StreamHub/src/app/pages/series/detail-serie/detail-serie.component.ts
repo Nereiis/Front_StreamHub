@@ -1,7 +1,7 @@
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { SeriesI } from 'src/app/models/interfaces';
+import { SeriesI, UsersI } from 'src/app/models/interfaces';
 import { SeriesService } from 'src/app/services/series/series.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { SeriesService } from 'src/app/services/series/series.service';
 export class DetailSerieComponent {
   serie!: SeriesI;
   id!: string;
+  user!: UsersI;
   
   constructor(private service: SeriesService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
@@ -30,7 +31,9 @@ export class DetailSerieComponent {
       } else {
         this.serie.Valoracion = sum/this.serie.Resena.length;
       }
-    });
+    })
+    this.user = JSON.parse(String(this.authService.getCurrentUser()));
+    //console.log(this.user);
   }
 
   deleteSerie() {
@@ -43,5 +46,12 @@ export class DetailSerieComponent {
   editSerie(serie:SeriesI) {
     this.service.editSerie(serie);
     this.router.navigate(['/gestionSeries']);
+  }
+
+  addFavoritos(){
+    if(!this.user.SeriesFavoritas.includes(this.serie._id)) {
+      this.user.SeriesFavoritas.push(this.serie._id);
+      this.authService.addSerieFavorita(this.user._id, this.serie._id).subscribe();
+    }
   }
 }
