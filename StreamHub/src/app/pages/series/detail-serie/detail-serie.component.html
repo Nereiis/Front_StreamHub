@@ -18,6 +18,18 @@
         </li>
     </ul>
 
+    <app-resena-serie [idSerie]="serie._id"></app-resena-serie>
+
+    <h4>Reseñas: </h4>
+    <ul>
+        <li *ngFor="let resena of serie.Resena">
+            <!-- <p>{{getUser(resena)}}<p> -->
+            <p>{{resena.Titulo}}</p>
+            <p>{{resena.Comentario}}</p>
+            <p>{{resena.Valoracion}}</p>
+        </li>
+    </ul>
+
     <button *ngIf="authService.getRole() == 'admin'" (click)="deleteSerie()">Eliminar Serie</button>
     <button *ngIf="authService.getRole() == 'admin'" (click)="editSerie(serie)">Editar Serie</button>
 </div>

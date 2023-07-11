@@ -19,6 +19,19 @@
         <p class="descripcion">{{libro.Descripcion}}</p>
         <h4 class="valoracion">{{libro.Valoracion}}</h4>
     </div>
+
+    <app-resena-libro [idLibro]="libro._id"></app-resena-libro>
+
+    <h4>Reseñas: </h4>
+    <ul>
+        <li *ngFor="let resena of libro.Resena">
+            <!-- <p>{{getUser(resena)}}<p> -->
+            <p>{{resena.Titulo}}</p>
+            <p>{{resena.Comentario}}</p>
+            <p>{{resena.Valoracion}}</p>
+        </li>
+    </ul>
+
     <div class="contenedorBotones">
         <button *ngIf="authService.getRole() == 'admin'" class="botonEditar" (click)="editLibro(libro)">Editar Libro</button>
         <button *ngIf="authService.getRole() == 'admin'" class="botonEliminar" (click)="deleteLibro()">Eliminar Libro</button>

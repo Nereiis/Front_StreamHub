@@ -44,6 +44,10 @@ export class LibrosService {
     return this.http.put(`${this.db_url}/${id}`, libro);
   }
 
+  addReviewToLibro(idLibro:string, idReview:string) {
+    return this.http.put(`${this.db_url}/addReview/${idLibro}`, {idReview});
+  }
+
   getOneLibro() {
     return this.libroData;
   }
