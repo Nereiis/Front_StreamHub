@@ -1,13 +1,11 @@
-
-<nav style="background-color: #E3F4F4;" class="navbar navbar-expand-lg ">
+<nav style="background-color: #E3F4F4;" class="navbar navbar-expand-lg">
   <div class="container-fluid">
-		<img src="https://cdn.iconscout.com/icon/free/png-256/free-online-streaming-1891078-1597991.png" alt="Logo" width="30" height="29" class="d-inline-block align-text-top">
-    <a class="navbar-brand" routerLink="/" *ngIf="!token">StreamHub</a>
-    <a class="navbar-brand" routerLink="/home" *ngIf="token">StreamHub</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="https://cdn.iconscout.com/icon/free/png-256/free-online-streaming-1891078-1597991.png" alt="Logo" width="30" height="29" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="#">StreamHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/peliculas">Películas</a>
@@ -19,19 +17,18 @@
           <a class="nav-link" routerLink="/libros">Libros</a>
         </li>
       </ul>
-      <ul class="register">
-        <li><a class="botonLogOut" routerLink="/register" *ngIf="!token"> Crear cuenta</a></li>
-        <li><a class="botonLogOut" routerLink="/login" *ngIf="!token"> Iniciar sesión</a></li>
-        <li>
+      <form class="d-flex" role="search">
+        <button class="btn btn-outline-success" type="submit" routerLink="/register" *ngIf="!token"> Crear Cuenta </button>
+        <button class="btn btn-outline-success" type="submit" routerLink="/login" *ngIf="!token"> Iniciar Sesion </button>
+        <div class="userSection">
+          <div class="iconUser">
+            <img  alt="Logo" width="30" height="29" class="user" *ngIf="token" src="{{user.Icono}}" alt="{{user.Username}}">
             <p *ngIf="token">{{user.Username}}</p>
-            <img  class="userImage" *ngIf="token" src="{{user.Icono}}" alt="{{user.Username}}">
-        </li>
-        <li><button class="botonLogOut" (click)="logOut()" *ngIf="token">Cerrar sesión</button></li>
+          </div>
+          <button class="btn btn-outline-success" (click)="logOut()" *ngIf="token">Cerrar sesión</button>
+        </div>
         
-      </ul>
-			<!-- <a routerLink="/">
-      	<img src="https://cdn-icons-png.flaticon.com/512/7439/7439967.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
-			</a> -->
+      </form>
     </div>
   </div>
 </nav>
