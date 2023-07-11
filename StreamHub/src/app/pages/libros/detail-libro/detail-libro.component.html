@@ -3,7 +3,7 @@
     <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" />
     <div class="contenedorIconos">
         <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
-        <button class="button" routerLink="/libros/{{libro._id}}" (click)="addFavoritos()"><img [ngClass]="{'fav': user.LibrosFavoritos.includes(id)}" class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+        <button class="button" routerLink="/libros/{{libro._id}}" (click)="addFavoritos()"><img id="favicon" [ngClass]="{'fav': favoritos.includes(id)}" class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
     </div>
     <div class="contenedorTexto">
         <h1 class="nombre">{{libro.Nombre}}</h1>
@@ -25,7 +25,7 @@
     <h4>Reseñas: </h4>
     <ul>
         <li *ngFor="let resena of libro.Resena">
-            <!-- <p>{{getUser(resena)}}<p> -->
+            <p>{{resena.Username.Username}}</p>
             <p>{{resena.Titulo}}</p>
             <p>{{resena.Comentario}}</p>
             <p-rating [(ngModel)]="resena.Valoracion" [cancel]="false"></p-rating>

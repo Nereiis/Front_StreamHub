@@ -24,7 +24,7 @@
     <h4>Reseñas: </h4>
     <ul>
         <li *ngFor="let resena of pelicula.Resena">
-            <!-- <p>{{getUser(resena)}}<p> -->
+            <p>{{resena.Username.Username}}</p>
             <p>{{resena.Titulo}}</p>
             <p>{{resena.Comentario}}</p>
             <p-rating [(ngModel)]="resena.Valoracion" [cancel]="false"></p-rating>
