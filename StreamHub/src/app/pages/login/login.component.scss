@@ -1,0 +1,45 @@
+div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    border-radius: 0.7rem;
+    padding-top: 0.3rem;
+    align-items: center; 
+    font-weight: bold;
+    min-width: 300px;
+    max-width: 900px;
+    width: 100%;
+
+    
+}
+
+input {
+    margin: 5px;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+button{
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #96baba;
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    
+}
