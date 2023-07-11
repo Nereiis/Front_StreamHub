@@ -20,9 +20,14 @@
         </li>
       </ul>
       <ul class="register">
-        <li><a routerLink="/register" *ngIf="!token"> Crear cuenta</a></li>
-        <li><a routerLink="/login" *ngIf="!token"> Iniciar sesión</a></li>
-        <li><button (click)="logOut()" *ngIf="token">Cerrar sesión</button></li>
+        <li><a class="botonLogOut" routerLink="/register" *ngIf="!token"> Crear cuenta</a></li>
+        <li><a class="botonLogOut" routerLink="/login" *ngIf="!token"> Iniciar sesión</a></li>
+        <li>
+            <p *ngIf="token">{{user.Username}}</p>
+            <img  class="userImage" *ngIf="token" src="{{user.Icono}}" alt="{{user.Username}}">
+        </li>
+        <li><button class="botonLogOut" (click)="logOut()" *ngIf="token">Cerrar sesión</button></li>
+        
       </ul>
 			<!-- <a routerLink="/">
       	<img src="https://cdn-icons-png.flaticon.com/512/7439/7439967.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">

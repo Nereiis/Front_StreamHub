@@ -43,15 +43,14 @@ export class LibrosComponent {
       this.categoriaList = [];
       this.filtroList = [...this.librosList];
     } else{
-    this.categoriaList=this.librosList.filter((item) =>
-    item.Genero.includes(categoria)
-    )
+      this.categoriaList=this.librosList.filter((item) =>
+        item.Genero.includes(categoria)
+      )
     
-    this.filtroList=this.librosList.filter((item) => 
-    item.Genero.includes(categoria)
-
-    )
-  }
+      this.filtroList=this.librosList.filter((item) => 
+      item.Genero.includes(categoria)
+      )
+    }
   }
 }
 

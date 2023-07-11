@@ -27,12 +27,15 @@
                 <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
             </div>
             <div class="contenedorFooter">
-                <div class="contenedorBotones">
+                <!-- <div class="contenedorBotones">
                     <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
                     <button class="button" routerLink="/series/{{serie._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
-                </div>
+                </div> -->
                 <h6>{{serie.Nombre}}</h6>
-                <p>{{serie.Valoracion}}</p>
+                <p>{{serie.Capitulos.length}} capítulos</p>
+                <span *ngFor="let genr of serie.Genero">
+                    <span>{{genr}} </span>
+                </span>
             </div>
             
         </li>

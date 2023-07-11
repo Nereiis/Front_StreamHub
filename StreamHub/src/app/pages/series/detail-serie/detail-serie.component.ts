@@ -13,7 +13,7 @@ export class DetailSerieComponent {
   serie!: SeriesI;
   id!: string;
   user!: UsersI;
-  value: number = 3;
+  favoritos!: string[];
   
   constructor(private service: SeriesService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
@@ -34,6 +34,9 @@ export class DetailSerieComponent {
       }
     })
     this.user = JSON.parse(String(this.authService.getCurrentUser()));
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      this.favoritos = data.SeriesFavoritas;
+    })
     //console.log(this.user);
   }
 
@@ -50,9 +53,11 @@ export class DetailSerieComponent {
   }
 
   addFavoritos(){
-    if(!this.user.SeriesFavoritas.includes(this.serie._id)) {
-      this.user.SeriesFavoritas.push(this.serie._id);
-      this.authService.addSerieFavorita(this.user._id, this.serie._id).subscribe();
-    }
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      if(!data.SeriesFavoritas.includes(this.serie._id)) {
+        this.favoritos.push(this.serie._id);
+        this.authService.addSerieFavorita(this.user._id, this.serie._id).subscribe();
+      }
+    })
   }
 }

@@ -27,13 +27,16 @@
                 <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
             </div>
             <div class="contenedorFooter">
-                <div class="contenedorBotones">
+                <!-- <div class="contenedorBotones">
                     <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
                     <button class="button" routerLink="/peliculas/{{pelicula._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
-                </div>
+                </div> -->
                 <h6>{{pelicula.Nombre}}</h6>
                 <p>Duración: {{pelicula.Duracion}}minutos</p>
-                <p>{{pelicula.Valoracion}}</p>
+                <span *ngFor="let genr of pelicula.Genero">
+                    <span>{{genr}} </span>
+                </span>
+                <!-- <p>{{pelicula.Valoracion}}</p> -->
             </div>
             
         </li>

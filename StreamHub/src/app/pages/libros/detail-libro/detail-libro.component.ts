@@ -13,12 +13,16 @@ export class DetailLibroComponent {
   libro!: LibrosI;
   id!: string;
   user!: UsersI;
+  favoritos!: string[];
 
   constructor (private service: LibrosService, private activatedRouter: ActivatedRoute, private router: Router, public authService: AuthService) {}
 
   ngOnInit(): void{
+    this.user = JSON.parse(String(this.authService.getCurrentUser()));
+
     this.activatedRouter.paramMap.subscribe((params) => {
       this.id = String(params.get("id"));
+
     })
     this.service.getLibroById(this.id).subscribe((data:any) => {
       this.libro = data;
@@ -33,7 +37,9 @@ export class DetailLibroComponent {
       }
       
     })
-    this.user = JSON.parse(String(this.authService.getCurrentUser()));
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      this.favoritos = data.LibrosFavoritos;
+    })
     //console.log(this.user);
   }
 
@@ -50,10 +56,12 @@ export class DetailLibroComponent {
   }
 
   addFavoritos(){
-    if(!this.user.LibrosFavoritos.includes(this.libro._id)) {
-      this.user.LibrosFavoritos.push(this.libro._id);
-      this.authService.addLibroFavorito(this.user._id, this.libro._id).subscribe();
-    }
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      if(!data.LibrosFavoritos.includes(this.libro._id)) {
+        this.favoritos.push(this.libro._id);
+        this.authService.addLibroFavorito(this.user._id, this.libro._id).subscribe();
+      }
+    })
   }
 
 }
