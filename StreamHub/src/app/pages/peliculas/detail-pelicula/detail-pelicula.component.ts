@@ -13,6 +13,7 @@ export class DetailPeliculaComponent {
   pelicula!: PeliculasI;
   id!: string;
   user!: UsersI;
+  favoritos!: string[];
   // username?: string;
   
   constructor(private service: PeliculasService, private activatedRoute: ActivatedRoute, private router: Router, public authService: AuthService) {}
@@ -34,16 +35,10 @@ export class DetailPeliculaComponent {
       }
     })
     this.user = JSON.parse(String(this.authService.getCurrentUser()));
-    //console.log(this.user);
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      this.favoritos = data.PeliculasFavoritas;
+    })
   }
-
-  //  getUser(resena: ResenasI) {
-  //    this.authService.getUserById(String(resena.Username)).subscribe((data:any) => {
-  //     this.username = data.Username;
-  //    })
-  //    console.log("username:" + this.username);
-  //    //return resena.Username.Username;
-  //  }
 
   deletePelicula() {
     this.service.deletePelicula(this.id).subscribe((data:any) => {
@@ -58,9 +53,12 @@ export class DetailPeliculaComponent {
   }
 
    addFavoritos(){
-    if(!this.user.PeliculasFavoritas.includes(this.pelicula._id)) {
-      this.user.PeliculasFavoritas.push(this.pelicula._id);
-      this.authService.addPeliculaFavorita(this.user._id, this.pelicula._id).subscribe();
-    }
+    this.authService.getUserById(this.user._id).subscribe((data:any) => {
+      if(!data.PeliculasFavoritas.includes(this.pelicula._id)) {
+        this.favoritos.push(this.pelicula._id);
+        this.authService.addPeliculaFavorita(this.user._id, this.pelicula._id).subscribe();
+      }
+    })
+    
   }
 }
