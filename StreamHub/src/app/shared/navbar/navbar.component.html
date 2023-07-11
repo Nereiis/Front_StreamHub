@@ -1,7 +1,8 @@
 <nav style="background-color: #E3F4F4;" class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <img src="https://cdn.iconscout.com/icon/free/png-256/free-online-streaming-1891078-1597991.png" alt="Logo" width="30" height="29" class="d-inline-block align-text-top">
-    <a class="navbar-brand" href="#">StreamHub</a>
+    <a class="navbar-brand" routerLink="/" *ngIf="!token">StreamHub</a>
+    <a class="navbar-brand" routerLink="/home" *ngIf="token">StreamHub</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
