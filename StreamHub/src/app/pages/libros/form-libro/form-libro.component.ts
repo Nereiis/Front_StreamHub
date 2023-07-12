@@ -15,6 +15,17 @@ export class FormLibroComponent {
   libro! : LibrosI;
   submitted: boolean = false;
 
+  genres: Array<any> = [
+    { name: 'Manga', value: 'Manga' },
+    { name: 'Narrativa de humor', value: 'Narrativa de humor' },
+    { name: 'Infantil', value: 'Infantil' },
+    { name: 'Novela de Terror', value: 'Novela de Terror' },
+    { name: 'Novela romántica', value: 'Novela romantica' },
+    { name: 'Narrativa fantástica', value: 'Narrativa fantastica' },
+    { name: 'Novela negra', value: 'Novela ' },
+    { name: 'Novela histórica', value: 'Novela historica' }
+  ];
+
   constructor(private service: LibrosService, private form: FormBuilder, private router: Router) {
     this.libro = this.service.getOneLibro();
     this._id = this.service.getId();
@@ -34,6 +45,17 @@ export class FormLibroComponent {
     this.libroForm.valueChanges.subscribe((data) => {
       this.libro = data;
     })
+  }
+
+  onCheckboxChange(event: any) {
+    if (event.target.checked) {
+      this.libro.Genero.push(event.target.value);
+    } else  {
+      const index = this.libro.Genero.indexOf(event.target.value);
+      if (index > -1) {
+        this.libro.Genero.splice(index, 1);
+      }
+    }
   }
   
   onClick() {

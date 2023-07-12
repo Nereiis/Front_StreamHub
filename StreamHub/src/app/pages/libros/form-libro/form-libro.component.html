@@ -14,10 +14,11 @@
         <input formControlName="Autor" type="text" id="Autor">
         <p *ngIf="(submitted && libroForm?.get('Autor')?.hasError('required'))">Este campo es requerido</p>
     </div>
-    <div class="divinput">
-        <label for="Genero">Género</label>
-        <input id="Genero"  formControlName="Genero" type="text"/>
-        <p *ngIf= "(submitted && libroForm?.get('Genero')?.hasError('required'))">Este campo es requerido</p>
+    <div *ngFor="let genre of genres; let i=index">
+        <label>
+            <input type="checkbox" [checked]="libro.Genero.includes(genre.value)" id={{genre.value}} [value]="genre.value" (change)="onCheckboxChange($event)" />
+            {{genre.name}}
+        </label>
     </div>
     <div>
         <label for="Descripcion"> Descripción </label>

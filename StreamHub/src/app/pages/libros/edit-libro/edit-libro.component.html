@@ -1,26 +1,27 @@
-<section>
+
     <form [formGroup]="libroForm" (ngSubmit)="editLibro()">
-        <div class="divinput">
+        <div >
             <label for="Portada">Portada</label>
             <input id="Portada"  formControlName="Portada" type="text"/>
-            <p *ngIf= "(submitted && libroForm?.get('Portada')?.hasError('required'))">Este campo es requerido</p>
+            <p *ngIf="(submitted && libroForm?.get('Portada')?.hasError('required'))">Este campo es requerido</p>
         </div>
-        <div class="divinput">
+        <div >
             <label for="Nombre">Nombre</label>
             <input id="Nombre" formControlName="Nombre" type="text"/>
-            <p *ngIf= "(submitted && libroForm?.get('Nombre')?.hasError('required'))">Este campo es requerido</p>
+            <p *ngIf="(submitted && libroForm?.get('Nombre')?.hasError('required'))">Este campo es requerido</p>
         </div>
-        <div class="divinput">
+        <div >
             <label for="Autor">Autor</label>
             <input id="Autor"  formControlName="Autor" type="text"/>
-            <p *ngIf= "(submitted && libroForm?.get('Autor')?.hasError('required'))">Este campo es requerido</p>
+            <p *ngIf="(submitted && libroForm?.get('Autor')?.hasError('required'))">Este campo es requerido</p>
         </div>
-        <div class="divinput">
-            <label for="Genero">Género</label>
-            <input id="Genero"  formControlName="Genero" type="text"/>
-            <p *ngIf= "(submitted && libroForm?.get('Genero')?.hasError('required'))">Este campo es requerido</p>
+        <div *ngFor="let genre of genres; let i=index">
+            <label>
+                <input type="checkbox" [checked]="libro.Genero.includes(genre.value)" id={{genre.value}} [value]="genre.value" (change)="onCheckboxChange($event)" />
+                {{genre.name}}
+            </label>
         </div>
-        <div class="divinput">
+        <div >
             <label for="Descripcion">Descripción</label>
             <input id="Descripcion"  formControlName="Descripcion" type="text"/>
             <p *ngIf= "(submitted && libroForm?.get('Descripcion')?.hasError('required'))">Este campo es requerido</p>
@@ -44,4 +45,4 @@
             </div>
         </article>
     </div>
-    </section>
+
