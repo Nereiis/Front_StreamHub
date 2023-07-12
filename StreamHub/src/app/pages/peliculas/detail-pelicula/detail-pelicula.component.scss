@@ -3,8 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #C4DFDF;
-  
+    background-color: #301E67;
+    color: white;
+    text-align: center;
     img {
       width: 100%;
       max-width: 800px;
@@ -54,12 +55,13 @@
     .contenedorBotones {
       display: flex;
       margin-bottom: 20px;
+      
     
   
         .botonEditar {
         margin: 10px 7%;
         border: none;
-        background-color: rgb(49, 49, 49);
+        background-color: #5B8FB9;
         color: white;
         font-weight: bold;
         padding: 5px;
@@ -84,7 +86,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      background-color: #C4DFDF;
+      background-color: #301E67;
       width: 100%;
       max-width: 800px;
     }
@@ -103,7 +105,7 @@
       height: 60px;
       border: none;
       border-radius: 50%;
-      background-color: #C4DFDF;
+      background-color: #301E67;
       margin: 10px;
     }
   }
