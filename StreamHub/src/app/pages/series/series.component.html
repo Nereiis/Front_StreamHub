@@ -1,47 +1,53 @@
-<div class="divinput">
-    <input
-      name="value"
-      [(ngModel)]="valueF"
-      id="value"
-      type="text"
-      (input)="filtrarDatos(filtro.value)"
-      #filtro
-    />
-    <select (change)="filtrarCategorias(categorias.value)" #categorias>
-      <option value="">Todas</option>
-      <option value="Anime">Anime</option>
-      <option value="Accion">Acción</option>
-      <option value="Drama">Drama</option>
-      <option value="Fantasia">Fantasía</option>
-      <option value="Terror">Terror</option>
-      <option value="Comedia">Comedia</option>
-      <option value="Romance">Romance</option>
-      <option value="Infantil">Infantil</option>
-    </select>
-</div>
+<body>
+    
 
-<section>
-    <ul>
-        <li *ngFor="let serie of filtroList" routerLink="/series/{{serie._id}}">
-            <div class="contenedorImagen">
-                <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
-            </div>
-            <div class="contenedorFooter">
-                <!-- <div class="contenedorBotones">
-                    <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
-                    <button class="button" routerLink="/series/{{serie._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
-                </div> -->
-                <h6>{{serie.Nombre}}</h6>
-                <p>{{serie.Capitulos.length}} capítulos</p>
-                <span *ngFor="let genr of serie.Genero">
-                    <span>{{genr}} </span>
-                </span>
-            </div>
-            
-        </li>
-    </ul>
-</section>
 
-<div class="contenedorBoton">
-    <button class="botonAñadir" *ngIf="authService.getRole() == 'admin'" routerLink="/gestionSeries">Añadir Serie</button>
-</div>
+    <div class="divinput">
+        <input
+        name="value"
+        [(ngModel)]="valueF"
+        id="value"
+        type="text"
+        (input)="filtrarDatos(filtro.value)"
+        #filtro
+        />
+        <select (change)="filtrarCategorias(categorias.value)" #categorias>
+        <option value="">Todas</option>
+        <option value="Anime">Anime</option>
+        <option value="Accion">Acción</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasia">Fantasía</option>
+        <option value="Terror">Terror</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Romance">Romance</option>
+        <option value="Infantil">Infantil</option>
+        </select>
+    </div>
+
+    <section class="container">
+        <ul>
+            <li class="container-card" *ngFor="let serie of filtroList" routerLink="/series/{{serie._id}}">
+                <div class="container-img">
+                    <img src="{{serie.Portada}}" alt="{{serie.Nombre}}" />
+                </div>
+                <div class="contenedorFooter">
+                    <!-- <div class="contenedorBotones">
+                        <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+                        <button class="button" routerLink="/series/{{serie._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+                    </div> -->
+                    <h6>{{serie.Nombre}}</h6>
+                    <p>{{serie.Capitulos.length}} capítulos</p>
+                    <span *ngFor="let genr of serie.Genero">
+                        <span>{{genr}} </span>
+                    </span>
+                </div>
+                
+            </li>
+        </ul>
+    </section>
+
+    <div class="contenedorBoton">
+        <button class="botonAñadir" *ngIf="authService.getRole() == 'admin'" routerLink="/gestionSeries">Añadir Serie</button>
+    </div>
+
+</body>

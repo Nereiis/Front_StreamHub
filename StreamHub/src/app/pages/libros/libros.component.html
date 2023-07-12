@@ -1,49 +1,53 @@
-<div class="divinput">
-    <input
-      name="value"
-      [(ngModel)]="valueF"
-      id="value"
-      type="text"
-      (input)="filtrarDatos(filtro.value)"
-      #filtro
-    />
-    <select (change)="filtrarCategorias(categorias.value)" #categorias>
-      <option value="">Todas</option>
-      <option value="Manga">Manga</option>
-      <option value="Narrativa de humor">Narrativa de humor</option>
-      <option value="Infantil">Infantil</option>
-      <option value="Novela de Terror">Novela de Terror</option>
-      <option value="Novela romática">Novela romántica</option>
-      <option value="Narrativa fantástica">Narrativa fantástica</option>
-      <option value="Novela negra">Novela negra</option>
-      <option value="Novela histórica">Novela histórica</option>
-    </select>
-</div>
+<body>
 
-<section>
-    <ul>
-        <li *ngFor="let libro of filtroList" >
-            <div  class="contenedorImagen">
-                <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" routerLink="/libros/{{libro._id}}"/>
-                
-            </div>
-            <div class="contenedorFooter">
-                <!-- <div class="contenedorBotones">
-                    <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
-                    <button class="button" routerLink="/libros/{{libro._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
-                </div> -->
-                <p>{{libro.Nombre}}</p>
-                <span *ngFor="let genr of libro.Genero">
-                    <span>{{genr}} </span>
-                </span>
-                
-            </div>
-        </li>
+
+    <div class="divinput">
+        <input
+        name="value"
+        [(ngModel)]="valueF"
+        id="value"
+        type="text"
+        (input)="filtrarDatos(filtro.value)"
+        #filtro
+        />
+        <select (change)="filtrarCategorias(categorias.value)" #categorias>
+        <option value="">Todas</option>
+        <option value="Manga">Manga</option>
+        <option value="Narrativa de humor">Narrativa de humor</option>
+        <option value="Infantil">Infantil</option>
+        <option value="Novela de Terror">Novela de Terror</option>
+        <option value="Novela romática">Novela romántica</option>
+        <option value="Narrativa fantástica">Narrativa fantástica</option>
+        <option value="Novela negra">Novela negra</option>
+        <option value="Novela histórica">Novela histórica</option>
+        </select>
+    </div>
+
+    <section class="container">
+        <ul>
+            <li class="container-card" *ngFor="let libro of filtroList" >
+                <div  class="container-img">
+                    <img src="{{libro.Portada}}" alt="{{libro.Nombre}}" routerLink="/libros/{{libro._id}}"/>
+                    
+                </div>
+                <div class="contenedorFooter">
+                    <!-- <div class="contenedorBotones">
+                        <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+                        <button class="button" routerLink="/libros/{{libro._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+                    </div> -->
+                    <p>{{libro.Nombre}}</p>
+                    <span *ngFor="let genr of libro.Genero">
+                        <span>{{genr}} </span>
+                    </span>
+                    
+                </div>
+            </li>
+            
+        </ul>
         
-    </ul>
-    
-</section>
-<div class="contenedorBoton">
-    <button  *ngIf="authService.getRole() == 'admin'" class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
-</div>
+    </section>
+    <div class="contenedorBoton">
+        <button  *ngIf="authService.getRole() == 'admin'" class="botonAñadir" routerLink="/gestionLibros">Añadir Libro</button>
+    </div>
 
+</body>
