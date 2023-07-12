@@ -25,10 +25,10 @@
     <app-resena-pelicula [idPelicula]="pelicula._id"></app-resena-pelicula>
 
     <h4>Reseñas: </h4>
-    <ul>
-        <li *ngFor="let resena of pelicula.Resena">
-            <p>{{resena.Username.Username}}</p>
-            <p>{{resena.Titulo}}</p>
+    <ul class="contenedorReseñas">
+        <li *ngFor="let resena of pelicula.Resena" class="reseñas">
+            <h3>{{resena.Username.Username}}</h3>
+            <p class="titulo">{{resena.Titulo}}</p>
             <p>{{resena.Comentario}}</p>
             <p-rating [(ngModel)]="resena.Valoracion" [cancel]="false" [readonly]="true"></p-rating>
         </li>
