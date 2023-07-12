@@ -54,7 +54,7 @@ export class PeliculasService {
   }
 
   getId(){
-    return this.id;
+    return this.peliculaData._id;
   }
 
   editPelicula(pelicula:PeliculasI) {

@@ -44,8 +44,12 @@ export class EditLibroComponent implements OnInit{
         this.router.navigate(["/libros"]);
       })
     };
+  }
 
-    
+  ngOnDestroy() : void {
+    this.submitted = false;
+    this.libroApi.resetLibroData();
+    this.id = "";
   }
 
 

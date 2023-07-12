@@ -46,9 +46,6 @@ export class FormComponent {
     this.serieForm.valueChanges.subscribe((data) => {
       this.serie = data;
     })
-    
-    console.log("serie:" + this.serie.Nombre);
-    console.log("serie:" + this.serie.Genero);
   }
 
   onCheckboxChange(event: any) {
@@ -60,7 +57,6 @@ export class FormComponent {
         this.serie.Genero.splice(index, 1);
       }
     }
-    console.log(this.serie.Genero);
   }
 
   onClick() {
@@ -68,19 +64,26 @@ export class FormComponent {
     if(this.serieForm.valid) {
       if(this._id === "") {
         // ADD SERIE
-        this.service.postSerie(this.serie).subscribe();
+        this.service.postSerie(this.serie).subscribe((data) => {
+          this.serieForm.reset();
+          this.submitted = false;
+          this.router.navigate(['/series']);
+        });
       } else {
         // EDIT SERIE
-        this.service.putSerie(this._id,this.serie).subscribe(); 
+        this.service.putSerie(this._id,this.serie).subscribe((data) => {
+          this.serieForm.reset();
+          this.submitted = false;
+          this.router.navigate(['/series']);
+        });
       }
-      this.serieForm.reset();
-      this.submitted = false;
-      this.router.navigate(['/series']);
+      
     }
   }
 
   ngOnDestroy() : void {
     this.submitted = false;
     this.service.resetSerieData();
+    this._id = "";
   }
 }

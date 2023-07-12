@@ -53,7 +53,7 @@ export class SeriesService {
   }
 
   getId(){
-    return this.id;
+    return this.serieData._id;
   }
 
   editSerie(serie:SeriesI) {
