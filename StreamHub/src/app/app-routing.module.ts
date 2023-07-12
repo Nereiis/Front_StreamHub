@@ -16,6 +16,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { authGuard } from './guards/auth.guard';
 import { TarifasComponent } from './pages/tarifas/tarifas.component';
 import { CheckSessionComponent } from './pages/check-session/check-session.component';
+import { NewsComponent } from './pages/news/news.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'series', component: SeriesComponent, canActivate:[authGuard] },
   { path: 'gestionSeries', component: FormComponent, canActivate:[authGuard] },
   { path: 'series/:id', component: DetailSerieComponent, canActivate:[authGuard] },
-  { path: 'tarifas', component: TarifasComponent}
+  { path: 'tarifas', component: TarifasComponent},
+  { path: 'news', component: NewsComponent}
 ];
 
 @NgModule({

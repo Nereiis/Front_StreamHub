@@ -30,6 +30,10 @@ import { FavoritosComponent } from './pages/peliculas/detail-pelicula/favoritos/
 import { ResenaLibroComponent } from './pages/libros/detail-libro/resena-libro/resena-libro.component';
 import { ResenaSerieComponent } from './pages/series/detail-serie/resena-serie/resena-serie.component';
 import { RatingModule } from 'primeng/rating';
+import { NewsComponent } from './pages/news/news.component';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { RatingModule } from 'primeng/rating';
     TarifasComponent,
     FavoritosComponent,
     ResenaLibroComponent,
-    ResenaSerieComponent
+    ResenaSerieComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,9 @@ import { RatingModule } from 'primeng/rating';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [
     {
