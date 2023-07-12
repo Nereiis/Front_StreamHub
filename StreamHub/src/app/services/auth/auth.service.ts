@@ -50,16 +50,16 @@ export class AuthService {
     return this.http.put(`${this.db_url}/users/addLibro/${id}`, {idLibro})
   }
 
-  addSerieFavorita(id: string, idSerie: string){
-    return this.http.put(`${this.db_url}/users/addSerie/${id}`, {idSerie})
+  addSerieFavorita(id: string, idSeries: string){
+    return this.http.put(`${this.db_url}/users/addSerie/${id}`, {idSeries})
   }
 
   removePeliculaFavorita(id: string, idPelicula: string) {
     return this.http.put(`${this.db_url}/users/removePelicula/${id}`, {idPelicula})
   }
 
-  removeSerieFavorita(id: string, idSerie: string) {
-    return this.http.put(`${this.db_url}/users/removeSerie/${id}`, {idSerie})
+  removeSerieFavorita(id: string, idSeries: string) {
+    return this.http.put(`${this.db_url}/users/removeSerie/${id}`, {idSeries})
   }
 
   removeLibroFavorita(id: string, idLibro: string) {
