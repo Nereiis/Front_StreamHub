@@ -18,7 +18,7 @@
         <p *ngIf="(submitted && registerForm?.get('Password')?.hasError('pattern'))">No cumple el formato de password (1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial)</p>
     </div>
     <div>
-        <button type="submit"> Registrar </button>
+        <button type="submit" routerLink="/tarifas"> Registrar </button>
     </div>
     <div *ngIf="error">
         <p>{{error}}</p>
