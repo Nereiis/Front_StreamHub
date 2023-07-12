@@ -34,10 +34,6 @@ export class FormLibroComponent {
     this.libroForm.valueChanges.subscribe((data) => {
       this.libro = data;
     })
-
-    
-    console.log("libro:" + this.libro.Nombre);
-    console.log("libro:" + this.libro.Genero);
   }
   
   onClick() {
@@ -45,20 +41,26 @@ export class FormLibroComponent {
     if(this.libroForm.valid) {
       if(this._id === "") {
         // ADD LIBRO
-        this.service.postLibro(this.libro).subscribe();
+        this.service.postLibro(this.libro).subscribe((data) => {
+          this.libroForm.reset();
+          this.submitted = false;
+          this.router.navigate(['/libros']);
+        });
       } else {
         // EDIT LIBRO
-        this.service.putLibro(this._id,this.libro).subscribe(); 
+        this.service.putLibro(this._id,this.libro).subscribe((data) => {
+          this.libroForm.reset();
+          this.submitted = false;
+          this.router.navigate(['/libros']);
+        });
       }
-      this.libroForm.reset();
-      this.submitted = false;
-      this.router.navigate(['/libros']);
     }
   }
 
   ngOnDestroy() : void {
     this.submitted = false;
     this.service.resetLibroData();
+    this._id = "";
   }
 }
 

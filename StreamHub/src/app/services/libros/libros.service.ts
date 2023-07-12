@@ -53,7 +53,7 @@ export class LibrosService {
   }
 
   getId(){
-    return this.id;
+    return this.libroData._id;
   }
 
   editLibro(libro:LibrosI) {

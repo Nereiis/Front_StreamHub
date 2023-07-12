@@ -47,17 +47,7 @@ export class FormPeliculaComponent {
     this.peliculaForm.valueChanges.subscribe((data) => {
       this.pelicula = data;
     })
-
-    // for (const genre of this.genres) {
-    //   console.log(genre.value);
-    //   const checkbox = document.getElementById(genre.value) as HTMLInputElement | null;
-    //   console.log(checkbox);
-    //   if (checkbox != null) {
-    //     checkbox.checked = this.serie.Genero.includes(checkbox.value);
-    //   }
-    // }
-    console.log("pelicula:" + this.pelicula.Nombre);
-    console.log("pelicula:" + this.pelicula.Genero);
+    console.log(this._id);
   }
 
   onCheckboxChange(event: any) {
@@ -69,27 +59,33 @@ export class FormPeliculaComponent {
         this.pelicula.Genero.splice(index, 1);
       }
     }
-    console.log(this.pelicula.Genero);
+    //console.log(this.pelicula.Genero);
   }
 
   onClick() {
     this.submitted = true;
     if(this.peliculaForm.valid) {
-      if(this._id === "") {
-        // ADD PELICULA
-        this.service.postPelicula(this.pelicula).subscribe();
-      } else {
+      if(this._id !== "") {
         // EDIT PELICULA
-        this.service.putPelicula(this._id,this.pelicula).subscribe(); 
+        this.service.putPelicula(this._id,this.pelicula).subscribe((data) => {
+          this.peliculaForm.reset()
+          this.submitted = false;
+          this.router.navigate(["/peliculas"]) 
+        })
+      } else {
+        // ADD PELICULA
+        this.service.postPelicula(this.pelicula).subscribe((data) => {
+          this.peliculaForm.reset()
+          this.submitted = false;
+          this.router.navigate(["/peliculas"]) 
+        })
       }
-      this.peliculaForm.reset();
-      this.submitted = false;
-      this.router.navigate(['/peliculas']);
     }
   }
 
   ngOnDestroy() : void {
     this.submitted = false;
     this.service.resetPeliculaData();
+    this._id = "";
   }
 }
