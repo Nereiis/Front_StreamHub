@@ -1,0 +1,182 @@
+body{
+    background-color: #301E67;
+  }
+  
+  .titulo{
+    color: white;
+    text-align: center;
+
+  }
+
+  .divinput {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+      border-radius: 0.7rem;
+      padding-top: 0.3rem;
+      align-items: center;
+  
+      input {
+        margin: 5px;
+        width: 20%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        min-width: 300px;
+      }
+  
+      select {
+        margin: 5px;
+        width: 20%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        min-width: 300px;
+      }
+  
+  
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container-card {
+      color: white;
+      text-align: center;
+      flex: 1 0 calc(30% - 40px);
+      height: 800px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    @media screen and (max-width: 1200px) {
+      .container-card {
+        flex: 1 0 calc(50% - 40px);
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .container-card {
+        flex: 1 0 calc(100% - 40px);
+      }
+    }
+    
+    .container-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .container-img img {
+      border-radius: 5px;
+      margin-top: 15px;
+      width: 85%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .contenedorFooter {
+      padding: 10px;
+    }
+    
+    h6 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    
+    span {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      color: #333;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 5px;
+    }
+    
+    span:hover {
+      background-color: #ccc;
+    }
+    
+  
+   
+  
+  
+  
+  
+  .contenedorBotones{
+      display: none;
+      margin: 15px 5%;
+      align-items: end;
+      width: 90%;
+  }
+  
+  .button{
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background-color: #C4DFDF;
+      
+      font-weight: bold;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+  }
+  
+  .contenedorFooter{
+      height: auto;
+      width: 100%;
+      
+  }
+  .botonAñadir{
+      margin: 30px 7%;
+      border: none;
+      background-color: #5B8FB9;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+  
+  }
+  
+  .contenedorBoton{
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+  }
+  
+  .icon{
+      width: 60%;
+      filter: invert(1);
+      //filter: invert(17%) sepia(89%) saturate(5705%) hue-rotate(3deg) brightness(106%) contrast(93%);
+      
+  }
+  
