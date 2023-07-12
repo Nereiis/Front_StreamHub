@@ -17,7 +17,8 @@
                 <p class="categoria">{{genr}}</p>
             </li>
         </ul>
-        <div class="contenedorCapitulos">
+
+        <!-- <div class="contenedorCapitulos">
             <h6>Capítulos</h6>
             <li *ngFor="let capitulo of serie.Capitulos" class="contenedorCapitulo">
                 <div class="capitulo1">
@@ -30,6 +31,22 @@
                     <p>{{capitulo.Descripcion}}</p>
                 </div>
             </li>
+        </div>
+    </div> -->
+
+    <div class="container text-center">
+        <div class="row g-2 g-lg-3">
+          <div class="row-cols" *ngFor="let capitulo of serie.Capitulos">
+            <div class="p-3">
+                <div class="img-container">
+                    <img src="{{capitulo.Icono}}" alt="{{capitulo.Nombre}}" />
+                </div>
+                <div class="text-container">
+                    <h5>{{capitulo.Nombre}}</h5>
+                    <p>{{capitulo.Descripcion}}</p>
+                </div>
+            </div>
+          </div>
         </div>
     </div>
 
