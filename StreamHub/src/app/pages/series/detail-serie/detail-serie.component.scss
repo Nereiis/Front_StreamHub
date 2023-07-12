@@ -1,3 +1,211 @@
-.fav{
+.article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #301E67;
+  color: white;
+  text-align: center;
+  img {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .contenedorTexto{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 20px 0;
+      max-width: 800px;
+      
+      p{
+          text-align: justify;
+      }
+
+      .contenedorCategorias{
+          display: flex;
+          width: 100%;
+          justify-content: flex-start;
+
+          .categorias{
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              justify-content: flex-start;
+              align-items: center;
+          
+          }
+
+          .categoria{
+              color: black;
+              background-color: #ffffff;
+              margin-top: 20px;
+              border-radius: 10px;
+              padding: 5px;
+              
+          }
+
+          
+      }
+  }
+  
+
+  
+
+  .contenedorBotones {
+    display: flex;
+    margin-bottom: 20px;
+    
+  
+
+      .botonEditar {
+      margin: 10px 7%;
+      border: none;
+      background-color: #5B8FB9;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+      width: 170px;
+      }
+  
+      .botonEliminar {
+      margin: 10px 7%;
+      border: none;
+      background-color: rgb(209, 45, 45);
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+      width: 170px;
+      }
+
+  }
+
+  .contenedorIconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #301E67;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .icon {
+    width: 60%;
+    filter: invert(1);
+  }
+
+  .fav{
     filter: invert(17%) sepia(89%) saturate(5705%) hue-rotate(3deg) brightness(106%) contrast(93%);
   }
+
+  .button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #301E67;
+    margin: 10px;
+  }
+}
+
+.contenedorReseñas{
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #020202;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.reseñas{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.titulo{
+  font-weight: bold;
+}
+
+.contenedor{
+  width: 90%;
+}
+
+.contenedorBotones {
+  display: flex;
+  margin-bottom: 20px;
+  
+
+
+    .botonEditar {
+    margin: 10px 7%;
+    border: none;
+    background-color: #5B8FB9;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    width: 170px;
+    }
+
+    .botonEliminar {
+    margin: 10px 7%;
+    border: none;
+    background-color: rgb(209, 45, 45);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    width: 170px;
+    }
+
+}
+
+.contenedorCapitulos{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedorCapitulo{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  color: #020202;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.capitulo1{
+  display: flex;
+  gap: 2%;
+  align-items: center;
+
+  img{
+    width: 13%;
+    margin: 1%;
+  }
+
+  p{
+    text-align: center;
+    margin-top: 12px;
+    margin-right: 2%;
+    font-weight: bold;
+  }
+}
+
+.capitulo2{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}

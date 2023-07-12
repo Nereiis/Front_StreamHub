@@ -32,6 +32,10 @@ import { ResenaSerieComponent } from './pages/series/detail-serie/resena-serie/r
 import { RatingModule } from 'primeng/rating';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ResponseComponent } from './pages/payment/response/response.component';
+import { NewsComponent } from './pages/news/news.component';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +65,8 @@ import { ResponseComponent } from './pages/payment/response/response.component';
     ResenaLibroComponent,
     ResenaSerieComponent,
     PaymentComponent,
-    ResponseComponent
+    ResponseComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,9 @@ import { ResponseComponent } from './pages/payment/response/response.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [
     {

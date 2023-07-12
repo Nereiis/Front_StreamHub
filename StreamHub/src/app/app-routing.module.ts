@@ -19,6 +19,7 @@ import { CheckSessionComponent } from './pages/check-session/check-session.compo
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ResponseComponent } from './pages/payment/response/response.component';
 
+import { NewsComponent } from './pages/news/news.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'series/:id', component: DetailSerieComponent, canActivate:[authGuard] },
   { path: 'tarifas', component: TarifasComponent},
   { path: 'payment', component: PaymentComponent},
-  { path: 'response', component: ResponseComponent}
+  { path: 'response', component: ResponseComponent},
+  { path: 'news', component: NewsComponent}
 ];
 
 @NgModule({
