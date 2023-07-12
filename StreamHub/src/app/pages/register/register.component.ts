@@ -34,7 +34,7 @@ export class RegisterComponent {
       this.authApi.register(user).subscribe((data: any) => {
         console.log(data);
         this.submitted = false;
-        this.router.navigate(['/register']);
+        this.router.navigate(['/tarifas']);
       }, (error) =>{
         this.error=error.error.message;
       })
