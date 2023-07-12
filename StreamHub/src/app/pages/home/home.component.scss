@@ -1,3 +1,7 @@
+body{
+  background-color: #301E67;
+}
+
 .first-component{
     position: inherit;
     background-image: url("https://i0.wp.com/alafuga.com/wp-content/uploads/2021/08/2021.08-estrenos-de-cine.jpg?fit=1200%2C675&ssl=1");
@@ -45,7 +49,7 @@
         button{
         margin: 30px 7%;
         border: none;
-        background-color: rgb(211, 9, 9);
+        background-color: #301E67;
         color: white;
         font-weight: bold;
         padding: 10px;
@@ -57,28 +61,35 @@
 
 .second-component{
 
+
     border-radius: 10px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
     
     .active{
         background-color: rgba(0, 0, 0, 0.0);
     }
     .nav {
-        background-image: radial-gradient(circle at -9.39% 34.09%, #b8de9b 0, #ace0a2 4.55%, #a1e2aa 9.09%, #95e3b2 13.64%, #89e5bc 18.18%, #7ee6c6 22.73%, #73e6d0 27.27%, #69e6da 31.82%, #60e6e4 36.36%, #5ae6ee 40.91%, #58e5f7 45.45%, #59e4ff 50%, #5fe3ff 54.55%, #68e1ff 59.09%, #74dfff 63.64%, #81dcff 68.18%, #90daff 72.73%, #9fd7ff 77.27%, #aed3ff 81.82%, #bdd0ff 86.36%, #cbcdff 90.91%, #d9c9ff 95.45%, #e5c6ff 100%);
-    
+      width: 200px;
+      background: rgb(3,0,28);
+      background: radial-gradient(circle, rgba(3,0,28,1) 0%, rgba(48,30,103,1) 50%, rgba(91,143,185,1) 100%);
+      border-radius: 10px;
         a{
-            color: black;
+            color: white;
         }
     
     
     }
     .card-body{
         height: 200px;
-        background-image: radial-gradient(circle at -9.39% 34.09%, #b8de9b 0, #ace0a2 4.55%, #a1e2aa 9.09%, #95e3b2 13.64%, #89e5bc 18.18%, #7ee6c6 22.73%, #73e6d0 27.27%, #69e6da 31.82%, #60e6e4 36.36%, #5ae6ee 40.91%, #58e5f7 45.45%, #59e4ff 50%, #5fe3ff 54.55%, #68e1ff 59.09%, #74dfff 63.64%, #81dcff 68.18%, #90daff 72.73%, #9fd7ff 77.27%, #aed3ff 81.82%, #bdd0ff 86.36%, #cbcdff 90.91%, #d9c9ff 95.45%, #e5c6ff 100%);
+        background: rgb(3,0,28);
+        background: radial-gradient(circle, rgba(3,0,28,1) 0%, rgba(48,30,103,1) 50%, rgba(91,143,185,1) 100%);
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        border-radius: 15px;
 
         .body-img{
 
@@ -91,16 +102,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: white;
         }
         .btn{
             margin-top: 10px;
             margin-bottom: 20px;
+            background-color: #301E67;
+            border-color: #301E67;
         }
     } 
 }
 
+h3{
+  color: white;
+}
 .contain {
+  color: white;
 
+    h5{
+      font-size: 30px;
+      font-weight: 400px;
+      margin-bottom: 20px;
+    }
     .rowposter {
       
       display: flex;
@@ -108,13 +131,15 @@
       align-items: flex-start; 
   
       .card {
+        color: white;
         flex: 0 0 200px; 
         margin-right: 10px;
         margin-bottom: 10px;
         transition: transform 450ms;
         align-items: center;
         height: 250px;
-        background-color: #C4DFDF;
+        background-color: #301E67;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   
         .rowimg {
           width: 90%;

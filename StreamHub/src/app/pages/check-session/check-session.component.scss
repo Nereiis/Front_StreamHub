@@ -1,92 +1,134 @@
-// .parent {
-//   background-image: linear-gradient(310deg, #00b1f5 0, #31aef8 8.33%, #4fabf9 16.67%, #67a8f9 25%, #7ba4f8 33.33%, #8da1f6 41.67%, #9d9df2 50%, #ac99ed 58.33%, #b995e7 66.67%, #c591e0 75%, #d08ed9 83.33%, #da8ad0 91.67%, #e287c7 100%);
-  
-//   }
-  
-//   .div1 { 
+body{
+    background-color: #301E67;
+    
+}
+
+
+.banner-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    img{
+        border-radius: 30px;
+        width: 95%;
+        filter: blur(3px);
+    }
+    .banner-text{
+        color: white;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        width: 95%;
+        transform: translate(-50%, -50%);
+
+        a{
+            text-decoration: underline;
+            color: #301E67;
+        }
+    }
+}
+
+
+.card-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     
     
 
-//     .banner{
-//       object-fit: contain;
-//       width: 99.7%;
-      
-//     }
-//   }
-//   .div2 { 
+    img{
+        align-items: center;
+        width: 70%;
+        margin-bottom: 15px;
+    }
+
+    div{
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn{
+        margin-bottom: 10px;
+        background-color: #5B8FB9;
+    }
+
+}
+
+
+.contain {
+    color: white;
+  
+      h5{
+        font-size: 30px;
+        font-weight: 400px;
+        margin-bottom: 20px;
+      }
+      .rowposter {
+        
+        display: flex;
+        overflow-x: scroll;
+        align-items: flex-start; 
     
-//     text-align: center;
-//     margin-top: 15px;
-//   }
-//   .div3 { 
-//     margin-top: 15px;
-     
-//     text-align: center;
+        .card {
+          color: white;
+          flex: 0 0 200px; 
+          margin-right: 10px;
+          margin-bottom: 10px;
+          transition: transform 0.3s ease-in-out;
+          align-items: center;
+          height: 250px;
+          background-color: #301E67;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
     
-//   }
-//   .div4 {  }
-//   .div5 {  }
-//   .div6 {  }
-
-//   .contain {
-
-//     .rowposter {
-      
-//       display: flex;
-//       overflow-x: scroll;
-//       align-items: flex-start; 
-  
-//       .card {
-//         flex: 0 0 200px; 
-//         margin-right: 10px;
-//         margin-bottom: 10px;
-//         transition: transform 450ms;
-//         align-items: center;
-//         height: 250px;
-//         background-color: #C4DFDF;
-  
-//         .rowimg {
-//           width: 90%;
-//           height: 150px; 
-//           object-fit: contain; 
-          
-//         }
-  
-//         h4 {
-//           text-align: center;
-//           margin-top: 10px; 
-//           height: 100px;
-//           width: 90%;
-//           font-weight: bold;
-//           font-size: 15px;
-//           text-transform: uppercase;
-//         }
-  
-//         &:hover {
-//           transform: scale(1.02);
-//           cursor: pointer;
-//         }
-//       }
-//     }
-//   }
-  
-//   .rowposter::-webkit-scrollbar {
-//     width: 8px;
-//   }
-  
-//   .rowposter::-webkit-scrollbar-track {
-//     background-color: transparent;
-//   }
-  
-//   .rowposter::-webkit-scrollbar-thumb {
-//     background-color: rgba(0, 0, 0, 0.5);
-//     border-radius: 4px;
-//   }
-  
-//   .rowposter::-webkit-scrollbar-thumb:hover {
-//     background-color: rgba(0, 0, 0, 0.7);
-//   }
-
-
-
-
+          .rowimg {
+            width: 90%;
+            height: 150px; 
+            object-fit: contain; 
+            
+            
+          }
+    
+          h4 {
+            text-align: center;
+            margin-top: 10px; 
+            height: 100px;
+            width: 90%;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+          }
+    
+          &:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    
+    .rowposter::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .rowposter::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    
+    .rowposter::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+    
+    .rowposter::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }

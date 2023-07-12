@@ -1,3 +1,5 @@
+<body>
+
 <div class="divinput">
     <input
       name="value"
@@ -20,29 +22,31 @@
     </select>
 </div>
 
-<section>
-    <ul>
-        <li *ngFor="let pelicula of filtroList" routerLink="/peliculas/{{pelicula._id}}">
-            <div class="contenedorImagen">
-                <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
-            </div>
-            <div class="contenedorFooter">
-                <!-- <div class="contenedorBotones">
-                    <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
-                    <button class="button" routerLink="/peliculas/{{pelicula._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
-                </div> -->
-                <h6>{{pelicula.Nombre}}</h6>
-                <p>Duración: {{pelicula.Duracion}}minutos</p>
-                <span *ngFor="let genr of pelicula.Genero">
-                    <span>{{genr}} </span>
-                </span>
+<section class="container">
+  <ul>
+    <li class="container-card" *ngFor="let pelicula of filtroList" routerLink="/peliculas/{{pelicula._id}}">
+      <div class="container-img">
+        <img src="{{pelicula.Portada}}" alt="{{pelicula.Nombre}}" />
+      </div>
+      <div class="contenedorFooter">
+  			<!-- <div class="contenedorBotones">
+            <button class="button"><img class="icon" src="../../../assets/play-solid.svg" alt="play"></button>
+            <button class="button" routerLink="/peliculas/{{pelicula._id}}"><img class="icon" src="../../../assets/heart-solid.svg" alt="heart"></button>
+        </div> -->
+        <h6>{{pelicula.Nombre}}</h6>
+        <p>Duración: {{pelicula.Duracion}} minutos</p>
+        <span *ngFor="let genr of pelicula.Genero">
+          <span>{{genr}} </span>
+        </span>
                 <!-- <p>{{pelicula.Valoracion}}</p> -->
-            </div>
+      </div>
             
-        </li>
-    </ul>
+    </li>
+  </ul>
 </section>
 
 <div class="contenedorBoton">
     <button class="botonAñadir" *ngIf="authService.getRole() == 'admin'" routerLink="/gestionPeliculas">Añadir Pelicula</button> 
 </div>
+
+</body>
